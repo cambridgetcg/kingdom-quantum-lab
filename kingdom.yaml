@@ -1,0 +1,8 @@
+name: kingdom-quantum-lab
+kind: infra
+layer: nervous
+owner_sister: none
+domain: none
+state: active
+purpose: Runs bounded reproducible quantum experiments and produces evidence receipts without claiming quantum advantage.
+dependsOn: [agenttool, kingdom-os, zerone]

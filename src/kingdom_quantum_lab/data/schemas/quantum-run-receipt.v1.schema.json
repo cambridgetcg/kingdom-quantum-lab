@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kingdom.local/schemas/quantum-receipt-v1.json",
+  "title": "KINGDOM E0 local reference quantum run receipt",
+  "description": "Records bounded local-simulator evidence. Validity is not truth, consent, identity, permission, reputation, reward, or publication authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "receipt_id",
+    "experiment_id",
+    "run_at",
+    "evidence_grade",
+    "claim_boundary",
+    "adapter",
+    "sources",
+    "execution",
+    "baseline",
+    "accounting",
+    "rights",
+    "limitations"
+  ],
+  "properties": {
+    "schema": { "const": "kingdom.quantum-receipt/v1" },
+    "receipt_id": { "type": "string", "pattern": "^qr-[a-f0-9]{24}$" },
+    "experiment_id": { "$ref": "#/$defs/id" },
+    "run_at": { "type": "string", "format": "date-time" },
+    "evidence_grade": { "const": "E0" },
+    "claim_boundary": {
+      "const": "Local reference simulation only; this is not quantum hardware execution or evidence of practical or quantum advantage."
+    },
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "execution_kind", "network_calls"],
+      "properties": {
+        "id": { "const": "kingdom.reference-openqasm-subset/v1" },
+        "execution_kind": { "const": "local-statevector-subset-simulator" },
+        "network_calls": { "const": 0 }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest",
+        "program",
+        "runner",
+        "validator",
+        "experiment_schema",
+        "receipt_schema",
+        "schema_validator"
+      ],
+      "properties": {
+        "manifest": { "$ref": "#/$defs/fileSource" },
+        "program": {
+          "allOf": [
+            { "$ref": "#/$defs/fileSource" },
+            {
+              "type": "object",
+              "required": ["representation"],
+              "properties": {
+                "representation": { "const": "OpenQASM 3 subset" }
+              }
+            }
+          ]
+        },
+        "runner": { "$ref": "#/$defs/pythonSource" },
+        "validator": { "$ref": "#/$defs/pythonSource" },
+        "experiment_schema": { "$ref": "#/$defs/packageSource" },
+        "receipt_schema": { "$ref": "#/$defs/packageSource" },
+        "schema_validator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["distribution", "version"],
+          "properties": {
+            "distribution": { "const": "jsonschema" },
+            "version": { "$ref": "#/$defs/text" }
+          }
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "qubits",
+        "operations",
+        "shots",
+        "seed",
+        "counts",
+        "observed_distribution",
+        "exact_simulator_distribution",
+        "local_elapsed_ms",
+        "runtime"
+      ],
+      "properties": {
+        "qubits": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "operations": { "type": "integer", "minimum": 0 },
+        "shots": { "type": "integer", "minimum": 1, "maximum": 100000 },
+        "seed": { "type": "integer", "minimum": 0 },
+        "counts": { "$ref": "#/$defs/counts" },
+        "observed_distribution": { "$ref": "#/$defs/distribution" },
+        "exact_simulator_distribution": { "$ref": "#/$defs/distribution" },
+        "local_elapsed_ms": { "type": "number", "minimum": 0 },
+        "runtime": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["implementation", "python_version"],
+          "properties": {
+            "implementation": { "$ref": "#/$defs/text" },
+            "python_version": { "$ref": "#/$defs/text" }
+          }
+        }
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "expected_distribution", "total_variation_distance"],
+      "properties": {
+        "method": { "$ref": "#/$defs/text" },
+        "expected_distribution": { "$ref": "#/$defs/distribution" },
+        "total_variation_distance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queue_time_seconds",
+        "qpu_time_seconds",
+        "cost_gbp",
+        "energy_estimate"
+      ],
+      "properties": {
+        "queue_time_seconds": { "const": 0 },
+        "qpu_time_seconds": { "const": 0 },
+        "cost_gbp": { "const": 0 },
+        "energy_estimate": { "const": "not-measured" }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_data", "personal_data", "license", "attribution"],
+      "properties": {
+        "human_data": { "const": false },
+        "personal_data": { "const": "none" },
+        "license": { "$ref": "#/$defs/text" },
+        "attribution": { "$ref": "#/$defs/text" }
+      }
+    },
+    "limitations": { "$ref": "#/$defs/textArray" }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "text": { "type": "string", "minLength": 1 },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "fileSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "$ref": "#/$defs/text" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "representation": { "const": "OpenQASM 3 subset" }
+      }
+    },
+    "pythonSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^python:kingdom_quantum_lab/[a-z_]+\\.py$"
+        },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "packageSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^package:kingdom_quantum_lab/data/schemas/[a-z0-9.-]+\\.json$"
+        },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[01]+$" },
+      "additionalProperties": { "type": "integer", "minimum": 1 }
+    },
+    "distribution": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[01]+$" },
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    }
+  }
+}

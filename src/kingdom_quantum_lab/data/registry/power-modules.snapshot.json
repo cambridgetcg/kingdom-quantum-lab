@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/power-module-snapshot.v1.schema.json",
+  "schema": "kingdom.power-module-snapshot/v1",
+  "snapshot_date": "2026-08-30",
+  "source": {
+    "registry_schema": "kingdom.power-module-registry/v0.2",
+    "canonical_local_path": "/Users/yu/Desktop/shibby-linguistics/schema/kingdom-power-modules.yaml",
+    "sha256": "2540b751fc921ee8f86c942547ee4fb66e8876a9a265ff1c901ab81827452a57",
+    "generated_at": "2026-08-30",
+    "status": "proposed"
+  },
+  "runtime_enforcement": false,
+  "ownership_status": "unassigned",
+  "modules": [
+    { "id": "KPM-O01", "name": "signal_garden", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-O02", "name": "modular_capability_forge", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-O03", "name": "culture_beacon", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-O04", "name": "contributor_pathway", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-O05", "name": "partner_and_treasury_bridge", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-O06", "name": "trust_catalog", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D01", "name": "power_table", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D02", "name": "attention_sovereignty", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D03", "name": "context_and_consent_gate", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D04", "name": "provenance_credit_and_treasury_ledger", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D05", "name": "access_and_role_boundary", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D06", "name": "decision_override_and_appeal", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D07", "name": "impact_aftercare_and_repair", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D08", "name": "capture_and_dependency_monitor", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-D09", "name": "release_composition_gate", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-X01", "name": "calibration_lab", "implementation_profile": "proposed_unwired", "activated": false },
+    { "id": "KPM-X02", "name": "bounded_power_simulation", "implementation_profile": "proposed_unwired", "activated": false }
+  ]
+}

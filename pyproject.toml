@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kingdom-quantum-lab"
+version = "0.1.0"
+description = "Local-first quantum experiment contracts and evidence receipts"
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema>=4.23,<5",
+]
+
+[project.scripts]
+kingdom-quantum = "kingdom_quantum_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kingdom_quantum_lab = [
+  "data/registry/*.json",
+  "data/schemas/*.json",
+]

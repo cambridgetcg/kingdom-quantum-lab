@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kingdom.local/schemas/product-portfolio-v1.json",
+  "title": "KINGDOM rights-bounded product portfolio",
+  "description": "Maps constitutional and quantum modules into product candidates without turning evidence, attention, payment, status, or consent into automatic authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "as_of",
+    "boundary",
+    "power_architecture_ref",
+    "constitutional_invariants",
+    "implementation_truth",
+    "principles",
+    "conversion_firewalls_sha256",
+    "conversion_firewalls",
+    "products"
+  ],
+  "properties": {
+    "$schema": { "const": "../schemas/product-portfolio.v1.schema.json" },
+    "schema": { "const": "kingdom.product-portfolio/v1" },
+    "as_of": { "type": "string", "format": "date" },
+    "boundary": { "$ref": "#/$defs/text" },
+    "power_architecture_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshot_schema",
+        "registry_schema",
+        "source",
+        "source_sha256",
+        "snapshot_date",
+        "status"
+      ],
+      "properties": {
+        "snapshot_schema": { "const": "kingdom.power-module-snapshot/v1" },
+        "registry_schema": { "const": "kingdom.power-module-registry/v0.2" },
+        "source": { "const": "registry/power-modules.snapshot.json" },
+        "source_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "snapshot_date": { "type": "string", "format": "date" },
+        "status": { "const": "proposed-unwired-reference" }
+      }
+    },
+    "constitutional_invariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "standing_rights_votable",
+        "binding_acts_in_heightened_context",
+        "global_person_score",
+        "tradable_evidence_or_governance_token",
+        "payment_buys_consent_or_authority",
+        "evidence_grade_changes_person_authority",
+        "moderation_changes_scientific_grade",
+        "consent_public_or_immutable_by_default"
+      ],
+      "properties": {
+        "standing_rights_votable": { "const": false },
+        "binding_acts_in_heightened_context": { "const": false },
+        "global_person_score": { "const": false },
+        "tradable_evidence_or_governance_token": { "const": false },
+        "payment_buys_consent_or_authority": { "const": false },
+        "evidence_grade_changes_person_authority": { "const": false },
+        "moderation_changes_scientific_grade": { "const": false },
+        "consent_public_or_immutable_by_default": { "const": false }
+      }
+    },
+    "implementation_truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "portfolio_validation_proves_runtime_enforcement",
+        "social_financial_or_governance_effects_wired",
+        "power_counterweights_wired"
+      ],
+      "properties": {
+        "portfolio_validation_proves_runtime_enforcement": { "const": false },
+        "social_financial_or_governance_effects_wired": { "const": false },
+        "power_counterweights_wired": { "const": false }
+      }
+    },
+    "principles": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "conversion_firewalls_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "conversion_firewalls": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": { "$ref": "#/$defs/conversion" }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/product" }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "pattern": "\\S" },
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "conversion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source", "target", "risk", "gate", "automatic"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^CF-[0-9]{2}$" },
+        "source": { "$ref": "#/$defs/text" },
+        "target": { "$ref": "#/$defs/text" },
+        "risk": { "$ref": "#/$defs/text" },
+        "gate": { "$ref": "#/$defs/text" },
+        "automatic": { "const": false }
+      }
+    },
+    "businessModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "revenue_events",
+        "per_conversion_revenue",
+        "per_consent_revenue",
+        "per_sanction_revenue",
+        "claim_outcome_revenue",
+        "governance_or_reputation_sale",
+        "personal_data_sale",
+        "resource_volume_markup",
+        "token_appreciation_revenue"
+      ],
+      "properties": {
+        "description": { "$ref": "#/$defs/text" },
+        "revenue_events": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "free-open-core",
+              "fixed-fee",
+              "fixed-subscription",
+              "cost-recovery",
+              "transparent-pass-through"
+            ]
+          }
+        },
+        "per_conversion_revenue": { "const": false },
+        "per_consent_revenue": { "const": false },
+        "per_sanction_revenue": { "const": false },
+        "claim_outcome_revenue": { "const": false },
+        "governance_or_reputation_sale": { "const": false },
+        "personal_data_sale": { "const": false },
+        "resource_volume_markup": { "const": false },
+        "token_appreciation_revenue": { "const": false }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "evidence_refs", "known_gaps", "live_effects"],
+      "properties": {
+        "state": {
+          "enum": [
+            "declared-only",
+            "partial-local-prototype",
+            "bounded-local-prototype"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/evidenceRef" }
+        },
+        "known_gaps": { "$ref": "#/$defs/textArray" },
+        "live_effects": { "const": false }
+      }
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^src/kingdom_quantum_lab/[A-Za-z0-9_./-]+$"
+        },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "family",
+        "design_stage",
+        "implementation",
+        "primary_users",
+        "job_to_be_done",
+        "does",
+        "does_not",
+        "workflow",
+        "business_model",
+        "pressure_boundary",
+        "rights_counterweights",
+        "firewall_dependencies",
+        "module_dependencies",
+        "power_dependencies",
+        "product_dependencies",
+        "success_metrics",
+        "forbidden_metrics",
+        "mvp_boundary",
+        "release_gate"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^K[QP]-[A-Z][A-Z0-9-]{2,31}$" },
+        "name": { "$ref": "#/$defs/text" },
+        "family": { "enum": ["constitutional", "quantum"] },
+        "design_stage": {
+          "enum": ["concept", "contract", "prototype", "research-only"]
+        },
+        "implementation": { "$ref": "#/$defs/implementation" },
+        "primary_users": { "$ref": "#/$defs/textArray" },
+        "job_to_be_done": { "$ref": "#/$defs/text" },
+        "does": { "$ref": "#/$defs/text" },
+        "does_not": { "$ref": "#/$defs/text" },
+        "workflow": { "$ref": "#/$defs/textArray" },
+        "business_model": { "$ref": "#/$defs/businessModel" },
+        "pressure_boundary": { "$ref": "#/$defs/text" },
+        "rights_counterweights": { "$ref": "#/$defs/textArray" },
+        "firewall_dependencies": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^CF-[0-9]{2}$" }
+        },
+        "module_dependencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(QK|QS|QN)-[A-Z0-9-]+$" }
+        },
+        "power_dependencies": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^KPM-(O|D|X)[0-9]{2}$" }
+        },
+        "product_dependencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^K[QP]-[A-Z][A-Z0-9-]{2,31}$" }
+        },
+        "success_metrics": { "$ref": "#/$defs/textArray" },
+        "forbidden_metrics": { "$ref": "#/$defs/textArray" },
+        "mvp_boundary": { "$ref": "#/$defs/text" },
+        "release_gate": { "$ref": "#/$defs/text" }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kingdom.local/schemas/quantum-experiment-v1.json",
+  "title": "KINGDOM bounded quantum experiment",
+  "description": "Records a preregistered experiment, baseline, rights boundary, cost policy, and claim ceiling. Validity is not authorization to spend, publish, use a provider, or claim quantum advantage.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "experiment_id",
+    "title",
+    "status",
+    "domain",
+    "purpose",
+    "hypothesis",
+    "representation",
+    "classical_baseline",
+    "execution_policy",
+    "rights",
+    "metrics",
+    "evidence_target",
+    "stop_conditions",
+    "limitations"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema": { "const": "kingdom.quantum-experiment/v1" },
+    "experiment_id": { "$ref": "#/$defs/id" },
+    "title": { "$ref": "#/$defs/text" },
+    "status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "approved-for-local-simulation",
+        "deprecated"
+      ]
+    },
+    "domain": {
+      "enum": [
+        "conformance",
+        "chemistry-materials",
+        "optimization",
+        "security",
+        "networking",
+        "education"
+      ]
+    },
+    "purpose": { "$ref": "#/$defs/text" },
+    "hypothesis": { "$ref": "#/$defs/text" },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "path", "native_sidecars"],
+      "properties": {
+        "kind": { "const": "openqasm3" },
+        "path": { "$ref": "#/$defs/text" },
+        "native_sidecars": {
+          "type": "array",
+          "maxItems": 0,
+          "items": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "classical_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "method", "expected_distribution"],
+      "properties": {
+        "required": { "const": true },
+        "method": { "$ref": "#/$defs/text" },
+        "expected_distribution": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": { "pattern": "^[01]+$" },
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "execution_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "allowed_adapters",
+        "network_allowed",
+        "max_cost_gbp",
+        "default_shots",
+        "max_shots",
+        "data_classification"
+      ],
+      "properties": {
+        "mode": { "const": "local-simulator-only" },
+        "allowed_adapters": {
+          "const": ["kingdom.reference-openqasm-subset/v1"]
+        },
+        "network_allowed": { "const": false },
+        "max_cost_gbp": { "const": 0 },
+        "default_shots": { "type": "integer", "minimum": 1, "maximum": 100000 },
+        "max_shots": { "type": "integer", "minimum": 1, "maximum": 100000 },
+        "data_classification": { "const": "public-synthetic" }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_data", "personal_data", "license", "attribution"],
+      "properties": {
+        "human_data": { "const": false },
+        "personal_data": { "const": "none" },
+        "license": { "$ref": "#/$defs/text" },
+        "attribution": { "$ref": "#/$defs/text" }
+      }
+    },
+    "metrics": { "$ref": "#/$defs/textArray" },
+    "evidence_target": { "const": "E0" },
+    "stop_conditions": { "$ref": "#/$defs/textArray" },
+    "limitations": { "$ref": "#/$defs/textArray" }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/text" }
+    }
+  }
+}

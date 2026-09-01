@@ -1,0 +1,54 @@
+{
+  "$schema": "../../schemas/experiment-plan.v1.schema.json",
+  "schema": "kingdom.quantum-experiment/v1",
+  "experiment_id": "bell-conformance-v1",
+  "title": "Bell-state reference contract",
+  "status": "approved-for-local-simulation",
+  "domain": "conformance",
+  "purpose": "Exercise the local experiment, policy, simulator, baseline, and receipt contracts without network or QPU access.",
+  "hypothesis": "The reference subset simulator produces only 00 and 11 outcomes with equal exact probability for H(0) followed by CX(0,1).",
+  "representation": {
+    "kind": "openqasm3",
+    "path": "program.qasm",
+    "native_sidecars": []
+  },
+  "classical_baseline": {
+    "required": true,
+    "method": "analytic-statevector-bell-distribution",
+    "expected_distribution": {
+      "00": 0.5,
+      "11": 0.5
+    }
+  },
+  "execution_policy": {
+    "mode": "local-simulator-only",
+    "allowed_adapters": [
+      "kingdom.reference-openqasm-subset/v1"
+    ],
+    "network_allowed": false,
+    "max_cost_gbp": 0,
+    "default_shots": 4096,
+    "max_shots": 100000,
+    "data_classification": "public-synthetic"
+  },
+  "rights": {
+    "human_data": false,
+    "personal_data": "none",
+    "license": "NOASSERTION",
+    "attribution": "KINGDOM Quantum Lab reference fixture"
+  },
+  "metrics": [
+    "outcome-support",
+    "total-variation-distance"
+  ],
+  "evidence_target": "E0",
+  "stop_conditions": [
+    "Any outcome other than 00 or 11 has non-zero exact simulator probability.",
+    "The receipt reports a network call, non-zero QPU time, non-zero queue time, or non-zero cost.",
+    "The run is labelled above E0."
+  ],
+  "limitations": [
+    "The Bell-state fixture is educational and does not test a useful application.",
+    "Agreement with an analytic two-qubit result does not validate a production simulator."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kingdom.local/schemas/quantum-ecosystems-v1.json",
+  "title": "KINGDOM dated quantum ecosystem and module registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "as_of",
+    "boundary",
+    "score_guide",
+    "ecosystems",
+    "modules",
+    "power_centers"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema": { "const": "kingdom.quantum-ecosystems/v1" },
+    "as_of": { "type": "string", "format": "date" },
+    "boundary": { "$ref": "#/$defs/text" },
+    "score_guide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value_now", "openness", "lock_in_risk"],
+      "properties": {
+        "value_now": { "$ref": "#/$defs/text" },
+        "openness": { "$ref": "#/$defs/text" },
+        "lock_in_risk": { "$ref": "#/$defs/text" }
+      }
+    },
+    "ecosystems": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/ecosystem" }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/module" }
+    },
+    "power_centers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/powerCenter" }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1 },
+    "score": { "type": "integer", "minimum": 0, "maximum": 5 },
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "ecosystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "category",
+        "posture",
+        "value_now",
+        "openness",
+        "lock_in_risk",
+        "valuable_capability",
+        "power_boundary",
+        "kingdom_move",
+        "does_not_prove",
+        "source_urls"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "name": { "$ref": "#/$defs/text" },
+        "category": { "$ref": "#/$defs/text" },
+        "posture": {
+          "enum": [
+            "adopt",
+            "contribute",
+            "experiment",
+            "engage",
+            "watch",
+            "avoid-dependency"
+          ]
+        },
+        "value_now": { "$ref": "#/$defs/score" },
+        "openness": { "$ref": "#/$defs/score" },
+        "lock_in_risk": { "$ref": "#/$defs/score" },
+        "valuable_capability": { "$ref": "#/$defs/text" },
+        "power_boundary": { "$ref": "#/$defs/text" },
+        "kingdom_move": { "$ref": "#/$defs/text" },
+        "does_not_prove": { "$ref": "#/$defs/text" },
+        "source_urls": { "$ref": "#/$defs/textArray" }
+      }
+    },
+    "module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "kind", "status", "does", "does_not", "depends_on"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "name": { "$ref": "#/$defs/text" },
+        "kind": { "enum": ["creation", "defense", "bridge", "research"] },
+        "status": { "enum": ["seeded", "proposed", "gated", "watch"] },
+        "does": { "$ref": "#/$defs/text" },
+        "does_not": { "$ref": "#/$defs/text" },
+        "depends_on": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "powerCenter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "controller", "leverage", "risk", "counterweight", "hold_authority"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "controller": { "$ref": "#/$defs/text" },
+        "leverage": { "$ref": "#/$defs/text" },
+        "risk": { "$ref": "#/$defs/text" },
+        "counterweight": { "$ref": "#/$defs/text" },
+        "hold_authority": { "$ref": "#/$defs/text" }
+      }
+    }
+  }
+}

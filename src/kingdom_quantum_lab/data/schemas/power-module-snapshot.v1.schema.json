@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kingdom.local/schemas/power-module-snapshot-v1.json",
+  "title": "KINGDOM power-module snapshot",
+  "description": "A versioned local projection of the external proposed power-module registry. It records references and implementation truth; it does not activate policy.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "snapshot_date",
+    "source",
+    "runtime_enforcement",
+    "ownership_status",
+    "modules"
+  ],
+  "properties": {
+    "$schema": { "const": "../schemas/power-module-snapshot.v1.schema.json" },
+    "schema": { "const": "kingdom.power-module-snapshot/v1" },
+    "snapshot_date": { "type": "string", "format": "date" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_schema",
+        "canonical_local_path",
+        "sha256",
+        "generated_at",
+        "status"
+      ],
+      "properties": {
+        "registry_schema": { "const": "kingdom.power-module-registry/v0.2" },
+        "canonical_local_path": { "$ref": "#/$defs/text" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "generated_at": { "type": "string", "format": "date" },
+        "status": { "const": "proposed" }
+      }
+    },
+    "runtime_enforcement": { "const": false },
+    "ownership_status": { "const": "unassigned" },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "implementation_profile",
+          "activated"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^KPM-(O|D|X)[0-9]{2}$" },
+          "name": { "$ref": "#/$defs/text" },
+          "implementation_profile": { "const": "proposed_unwired" },
+          "activated": { "const": false }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "pattern": "\\S" }
+  }
+}

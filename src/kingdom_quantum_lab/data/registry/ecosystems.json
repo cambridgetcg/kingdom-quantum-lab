@@ -1,0 +1,602 @@
+{
+  "$schema": "../schemas/ecosystem-registry.v1.schema.json",
+  "schema": "kingdom.quantum-ecosystems/v1",
+  "as_of": "2026-08-31",
+  "boundary": "Scores are dated KINGDOM prioritization judgments, not vendor rankings, procurement approval, scientific proof, partnership authority, or permission to use a provider. Revalidate volatile capabilities, versions, prices, regions, terms, standards, and security status before action.",
+  "score_guide": {
+    "value_now": "0 has no present scoped value; 5 can create durable value now without requiring speculative advantage.",
+    "openness": "0 is inaccessible or inseparable from one provider; 5 has open specifications or implementations and credible exit paths.",
+    "lock_in_risk": "0 has negligible coupling; 5 creates substantial technical, commercial, data, or governance dependence. Higher is worse."
+  },
+  "ecosystems": [
+    {
+      "id": "standards.openqasm3",
+      "name": "OpenQASM 3",
+      "category": "interchange-standard",
+      "posture": "adopt",
+      "value_now": 5,
+      "openness": 5,
+      "lock_in_risk": 1,
+      "valuable_capability": "A human-readable circuit and hardware-description interchange with classical control and timing concepts.",
+      "power_boundary": "Implementations may support only subsets, and accepted programs can still compile differently for each target.",
+      "kingdom_move": "Preserve validated OpenQASM exports beside the canonical problem and lossless native sidecars.",
+      "does_not_prove": "OpenQASM portability does not mean identical performance or feature support on every backend.",
+      "source_urls": [
+        "https://openqasm.com/versions/3.0/index.html",
+        "https://openqasm.com/release_notes.html"
+      ]
+    },
+    {
+      "id": "standards.qir",
+      "name": "Quantum Intermediate Representation Alliance",
+      "category": "compiler-standard",
+      "posture": "contribute",
+      "value_now": 5,
+      "openness": 5,
+      "lock_in_risk": 1,
+      "valuable_capability": "An LLVM-based interchange for heterogeneous classical-quantum compilation with explicit profiles.",
+      "power_boundary": "A QIR version, profile, target quantum instruction set, and runtime contract are all needed; QIR is not a universal binary.",
+      "kingdom_move": "Build conformance fixtures, round-trip tests, profile declarations, and readable evidence around QIR exports.",
+      "does_not_prove": "QIR conformance does not prove that a target preserves every source-level semantic or hardware capability.",
+      "source_urls": [
+        "https://github.com/qir-alliance/qir-spec",
+        "https://github.com/qir-alliance/qir-spec/blob/main/specification/README.md"
+      ]
+    },
+    {
+      "id": "framework.qiskit",
+      "name": "Qiskit and IBM Quantum Compute Service",
+      "category": "gate-framework-and-cloud",
+      "posture": "experiment",
+      "value_now": 5,
+      "openness": 4,
+      "lock_in_risk": 3,
+      "valuable_capability": "Mature circuit construction, transpilation, primitives, simulators, error work, and chemistry tooling.",
+      "power_boundary": "The open SDK and abstract primitives are distinct from IBM-managed execution and server-side features.",
+      "kingdom_move": "Make Qiskit a first-class optional adapter while preserving circuits, observables, samples, passes, and mitigation settings outside IBM services.",
+      "does_not_prove": "A result produced with a Qiskit or IBM mitigation workflow is not automatically portable or independently reproducible.",
+      "source_urls": [
+        "https://quantum.cloud.ibm.com/docs/guides/compute-services",
+        "https://quantum.cloud.ibm.com/docs/en/guides/primitives",
+        "https://quantum.cloud.ibm.com/docs/en/addons/qiskit-addon-sqd"
+      ]
+    },
+    {
+      "id": "framework.cirq-openfermion",
+      "name": "Cirq, qsim, and OpenFermion",
+      "category": "simulation-and-chemistry",
+      "posture": "adopt",
+      "value_now": 5,
+      "openness": 5,
+      "lock_in_risk": 2,
+      "valuable_capability": "Strong circuit transformation, noise simulation, virtual-engine testing, and fermionic or chemistry representations.",
+      "power_boundary": "Google hardware access is restricted and device-specific features create affinity even when the software is open.",
+      "kingdom_move": "Use Cirq and qsim as an independent simulator lane and OpenFermion as a chemistry interchange layer.",
+      "does_not_prove": "A Google-style virtual device is not access to, or evidence from, a physical Google processor.",
+      "source_urls": [
+        "https://quantumai.google/cirq/simulate/simulation",
+        "https://quantumai.google/cirq/google/engine",
+        "https://quantumai.google/openfermion"
+      ]
+    },
+    {
+      "id": "framework.pennylane-catalyst",
+      "name": "PennyLane and Catalyst",
+      "category": "hybrid-differentiable-framework",
+      "posture": "adopt",
+      "value_now": 4,
+      "openness": 5,
+      "lock_in_risk": 2,
+      "valuable_capability": "Portable differentiable workflows, broad device plugins, and compiled hybrid quantum-classical programs.",
+      "power_boundary": "Device plugins, gradient semantics, supported control flow, and compiler support vary; Catalyst remains under active development.",
+      "kingdom_move": "Use it as the rapid research frontend when gradients matter while keeping experiment semantics outside QNodes.",
+      "does_not_prove": "One source program does not guarantee equivalent gradients, cost, or execution semantics across plugins.",
+      "source_urls": [
+        "https://docs.pennylane.ai/en/stable/",
+        "https://docs.pennylane.ai/projects/catalyst/en/latest/index.html",
+        "https://docs.pennylane.ai/projects/catalyst/en/stable/dev/architecture.html"
+      ]
+    },
+    {
+      "id": "framework.cuda-q",
+      "name": "NVIDIA CUDA-Q",
+      "category": "heterogeneous-compute-toolchain",
+      "posture": "experiment",
+      "value_now": 4,
+      "openness": 4,
+      "lock_in_risk": 4,
+      "valuable_capability": "A CPU, GPU, and QPU programming model with scalable simulation, dynamics, error-correction work, and hardware backends.",
+      "power_boundary": "The open toolchain still gains its strongest operational advantage from NVIDIA CUDA infrastructure and follows its compiler model.",
+      "kingdom_move": "Add after the portable local core, when a scoped Linux NVIDIA or HPC node exists; treat macOS execution as CPU-side only.",
+      "does_not_prove": "Open source does not eliminate hardware, compiler, or roadmap affinity.",
+      "source_urls": [
+        "https://nvidia.github.io/cuda-quantum/latest/index.html",
+        "https://nvidia.github.io/cuda-quantum/latest/using/backends/backends.html",
+        "https://nvidia.github.io/cuda-quantum/latest/using/quick_start.html"
+      ]
+    },
+    {
+      "id": "broker.amazon-braket",
+      "name": "Amazon Braket",
+      "category": "multi-provider-cloud-broker",
+      "posture": "experiment",
+      "value_now": 4,
+      "openness": 3,
+      "lock_in_risk": 4,
+      "valuable_capability": "One public route to several gate and neutral-atom QPUs plus local and managed simulators.",
+      "power_boundary": "IAM, regions, S3, job containers, metrics, billing, and third-party hardware processing create multiple control and data boundaries.",
+      "kingdom_move": "Use as the first optional multi-hardware bridge only after cost, region, credential, payload-minimization, retry, and cancellation gates exist.",
+      "does_not_prove": "A broker normalizes procurement, not hardware semantics, privacy terms, or comparative performance.",
+      "source_urls": [
+        "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html",
+        "https://docs.aws.amazon.com/braket/latest/developerguide/third-party-security.html",
+        "https://github.com/amazon-braket"
+      ]
+    },
+    {
+      "id": "broker.azure-quantum-qdk",
+      "name": "Microsoft QDK, resource estimator, and Azure Quantum",
+      "category": "resource-estimation-and-cloud",
+      "posture": "adopt",
+      "value_now": 5,
+      "openness": 4,
+      "lock_in_risk": 3,
+      "valuable_capability": "A local fault-tolerant resource estimator, QIR tooling, Q#, and access to several provider families.",
+      "power_boundary": "The estimator can be used locally, while Azure workspaces, storage, provider availability, and billing create cloud coupling.",
+      "kingdom_move": "Adopt the local estimator early and require physical-qubit, runtime, error-budget, and assumption fields for future-facing proposals.",
+      "does_not_prove": "A resource estimate is not a roadmap promise or evidence that required hardware exists.",
+      "source_urls": [
+        "https://learn.microsoft.com/en-us/azure/quantum/overview-resources-estimator",
+        "https://learn.microsoft.com/en-us/azure/quantum/qc-target-list",
+        "https://learn.microsoft.com/en-us/azure/quantum/quantum-computing-target-profiles"
+      ]
+    },
+    {
+      "id": "hardware.quantinuum-pytket",
+      "name": "Quantinuum and pytket",
+      "category": "trapped-ion-and-compiler",
+      "posture": "experiment",
+      "value_now": 4,
+      "openness": 4,
+      "lock_in_risk": 3,
+      "valuable_capability": "A strong compiler and backend abstraction plus advanced trapped-ion, emulator, adaptive-control, and QIR workflows.",
+      "power_boundary": "Advanced control can be lost through a lowest-common-denominator frontend; Nexus, Guppy, and native behavior add affinity.",
+      "kingdom_move": "Use for adaptive and QIR comparison work, preserving both portable and exact native artifacts.",
+      "does_not_prove": "Successful conversion from another SDK does not prove preservation of every dynamic or native capability.",
+      "source_urls": [
+        "https://docs.quantinuum.com/tket/api-docs/backends.html",
+        "https://docs.quantinuum.com/nexus/index.html",
+        "https://docs.quantinuum.com/nexus/trainings/notebooks/basics/qir/index.html"
+      ]
+    },
+    {
+      "id": "hardware.ionq",
+      "name": "IonQ",
+      "category": "trapped-ion-hardware",
+      "posture": "experiment",
+      "value_now": 3,
+      "openness": 3,
+      "lock_in_risk": 3,
+      "valuable_capability": "Direct and brokered access with maintained routes from Qiskit, Cirq, PennyLane, and CUDA-Q, plus abstract and native gates.",
+      "power_boundary": "Provider compilation hides transformations while native gates improve control at the cost of device-family coupling.",
+      "kingdom_move": "Use as one trapped-ion comparison target and record client versus provider compilation and compiled gate counts.",
+      "does_not_prove": "Raw qubit counts or abstract-circuit similarity do not make cross-provider results comparable.",
+      "source_urls": [
+        "https://docs.ionq.com/sdks",
+        "https://docs.ionq.com/sdks/qiskit/native-gates-qiskit"
+      ]
+    },
+    {
+      "id": "hardware.neutral-atoms",
+      "name": "QuEra Bloqade and Pasqal Pulser",
+      "category": "neutral-atom-analog-and-digital",
+      "posture": "experiment",
+      "value_now": 4,
+      "openness": 4,
+      "lock_in_risk": 4,
+      "valuable_capability": "Programmable geometries and analog Hamiltonian experiments suited to lattice, spin, many-body, and materials questions.",
+      "power_boundary": "Analog programs are not faithfully reducible to ordinary gate circuits, and early APIs can be unstable.",
+      "kingdom_move": "Create a separate analog-Hamiltonian execution family instead of forcing these systems through a gate adapter.",
+      "does_not_prove": "Fit between a hardware Hamiltonian and a scientific model does not make the device a generic accelerator.",
+      "source_urls": [
+        "https://bloqade.quera.com/",
+        "https://github.com/QuEraComputing/bloqade",
+        "https://docs.pasqal.com/cloud/quick-start/"
+      ]
+    },
+    {
+      "id": "hardware.dwave-ocean",
+      "name": "D-Wave Ocean and Leap",
+      "category": "annealing-and-hybrid-optimization",
+      "posture": "experiment",
+      "value_now": 4,
+      "openness": 4,
+      "lock_in_risk": 5,
+      "valuable_capability": "A developed stack for binary, constrained, nonlinear, classical, annealing, and hybrid optimization workflows.",
+      "power_boundary": "The problem model and execution paradigm are not interchangeable with gate-model QAOA; managed hybrid internals obscure quantum contribution.",
+      "kingdom_move": "Maintain a distinct optimization family with exact, MIP, local-search, and heuristic baselines under the same problem contract.",
+      "does_not_prove": "A managed hybrid solver win does not establish that its quantum component caused the gain.",
+      "source_urls": [
+        "https://docs.dwavequantum.com/en/latest/ocean/stack.html",
+        "https://docs.dwavequantum.com/en/latest/concepts/hybrid.html",
+        "https://docs.dwavequantum.com/en/latest/quantum_research/classical_intro.html"
+      ]
+    },
+    {
+      "id": "access.uk-nqcc-sparq",
+      "name": "UK NQCC SparQ Access",
+      "category": "public-research-access",
+      "posture": "engage",
+      "value_now": 5,
+      "openness": 4,
+      "lock_in_risk": 1,
+      "valuable_capability": "Assured multi-platform access, application discovery, skills, and UK quantum-readiness routes without immediate hardware procurement.",
+      "power_boundary": "Access is eligibility-, allocation-, programme-, and timeframe-dependent; applications and partnerships require separate authority.",
+      "kingdom_move": "Prepare a credible benchmark and evidence package locally, then consider an industry expression of interest only with explicit approval.",
+      "does_not_prove": "Programme availability does not guarantee allocation, suitability, continuity, or free production compute.",
+      "source_urls": [
+        "https://www.nqcc.ac.uk/sparq-access/",
+        "https://www.nqcc.ac.uk/sparq-access-for-industries/"
+      ]
+    },
+    {
+      "id": "security.nist-pqc",
+      "name": "NIST post-quantum standards and migration programme",
+      "category": "post-quantum-security",
+      "posture": "adopt",
+      "value_now": 5,
+      "openness": 5,
+      "lock_in_risk": 1,
+      "valuable_capability": "Final ML-KEM, ML-DSA, and SLH-DSA standards plus migration, KEM, inventory, interoperability, and crypto-agility guidance.",
+      "power_boundary": "Standards still require maintained implementations, pinned revisions and errata, protocol integration, testing, rotation, and operational governance.",
+      "kingdom_move": "Begin a no-key-material cryptographic census and crypto-agility design now; never implement a new KINGDOM primitive.",
+      "does_not_prove": "A standardized algorithm is not automatically a secure implementation, validated module, protocol, or deployment.",
+      "source_urls": [
+        "https://csrc.nist.gov/pubs/fips/203/final",
+        "https://csrc.nist.gov/pubs/fips/204/final",
+        "https://csrc.nist.gov/pubs/fips/205/final",
+        "https://csrc.nist.gov/pubs/sp/800/227/final",
+        "https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc"
+      ]
+    },
+    {
+      "id": "security.openssl-ietf-pqc",
+      "name": "OpenSSL 3.5 LTS and IETF PQC protocol standards",
+      "category": "post-quantum-implementation-and-protocols",
+      "posture": "experiment",
+      "value_now": 5,
+      "openness": 5,
+      "lock_in_risk": 1,
+      "valuable_capability": "Native standardized PQC plus standards-track hybrid TLS key agreement and ML-DSA formats for X.509, JOSE, and COSE.",
+      "power_boundary": "Hybrid key agreement is not hybrid authentication, a patched release is required, and native support is not the same as FIPS 140 validation.",
+      "kingdom_move": "Build controlled interoperability canaries that record negotiated suites, fallback, fragmentation, versions, and separate authentication properties.",
+      "does_not_prove": "Successful negotiation does not establish endpoint, certificate, identity, application, or regulated-deployment security.",
+      "source_urls": [
+        "https://openssl-library.org/post/2025-04-08-openssl-35-final-release/",
+        "https://www.openssl-library.org/source/",
+        "https://www.rfc-editor.org/rfc/rfc10024.html",
+        "https://www.rfc-editor.org/rfc/rfc9881.html",
+        "https://www.rfc-editor.org/rfc/rfc9964.html"
+      ]
+    },
+    {
+      "id": "security.open-quantum-safe",
+      "name": "Open Quantum Safe",
+      "category": "cryptographic-research-tooling",
+      "posture": "experiment",
+      "value_now": 4,
+      "openness": 5,
+      "lock_in_risk": 1,
+      "valuable_capability": "Cross-implementation testing, candidate evaluation, test vectors, fuzzing, and protocol prototyping.",
+      "power_boundary": "The project describes its integrations as research and not production quality; standardized algorithms should use maintained native providers where available.",
+      "kingdom_move": "Confine OQS to an isolated interoperability lab with minimal builds and explicit non-production labels.",
+      "does_not_prove": "Availability through liboqs or oqs-provider does not establish production readiness or standards status.",
+      "source_urls": [
+        "https://openquantumsafe.org/liboqs/security.html",
+        "https://github.com/open-quantum-safe/oqs-provider",
+        "https://pqca.org/home/"
+      ]
+    },
+    {
+      "id": "network.sequence",
+      "name": "SeQUeNCe quantum-network simulator",
+      "category": "quantum-network-research",
+      "posture": "experiment",
+      "value_now": 3,
+      "openness": 5,
+      "lock_in_risk": 1,
+      "valuable_capability": "An open discrete-event simulator spanning hardware, entanglement, resource, network, and application layers.",
+      "power_boundary": "Simulation assumptions and scheduler policy can dominate results; a simulated network is not a deployed quantum link.",
+      "kingdom_move": "Use as the first backend-neutral networking sandbox and cross-check material claims in a second implementation.",
+      "does_not_prove": "A simulator result does not establish hardware feasibility, security, deployment, or useful network capacity.",
+      "source_urls": [
+        "https://github.com/sequence-toolbox/SeQUeNCe",
+        "https://www.rfc-editor.org/rfc/rfc9340.html",
+        "https://www.rfc-editor.org/rfc/rfc9583.html"
+      ]
+    },
+    {
+      "id": "network.qutech-stack",
+      "name": "NetQASM, SquidASM, NetSquid, and QNodeOS research stack",
+      "category": "quantum-network-research",
+      "posture": "watch",
+      "value_now": 3,
+      "openness": 2,
+      "lock_in_risk": 4,
+      "valuable_capability": "Influential application-ISA, simulation, and node-operating-system concepts for programmable quantum networks.",
+      "power_boundary": "NetQASM cites patent and commercial-licensing requirements, SquidASM depends on account-gated NetSquid, and QNodeOS source is not open.",
+      "kingdom_move": "Study interfaces and reproduce concepts in open fixtures without making the stack an undeclared dependency.",
+      "does_not_prove": "A primary laboratory demonstration is not a generally available open operating system or network service.",
+      "source_urls": [
+        "https://github.com/QuTech-Delft/netqasm",
+        "https://github.com/QuTech-Delft/squidasm",
+        "https://netsquid.org/",
+        "https://doi.org/10.1038/s41586-025-08704-w"
+      ]
+    },
+    {
+      "id": "network.qkd",
+      "name": "Quantum key distribution",
+      "category": "specialized-security-research",
+      "posture": "avoid-dependency",
+      "value_now": 1,
+      "openness": 2,
+      "lock_in_risk": 5,
+      "valuable_capability": "Specialized physical-layer key-distribution research under narrow assumptions.",
+      "power_boundary": "QKD does not authenticate its source, requires dedicated links and hardware, adds relay and implementation risk, and does not secure endpoints or stored data.",
+      "kingdom_move": "Do not procure it as a defensive capability; admit only labelled, non-production research with ordinary post-quantum authentication.",
+      "does_not_prove": "QKD is not general encryption, identity, application security, endpoint protection, or a replacement for PQC.",
+      "source_urls": [
+        "https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/",
+        "https://www.ncsc.gov.uk/paper/quantum-networking-technologies",
+        "https://www.etsi.org/images/files/ETSIWhitePapers/etsi_wp27_qkd_imp_sec_FINAL.pdf"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "QK-CORE",
+      "name": "Quantum Experiment Bundle",
+      "kind": "creation",
+      "status": "seeded",
+      "does": "Keeps a canonical problem, falsifiable hypothesis, baseline, metrics, rights, budget, stop rule, and artifact references together.",
+      "does_not": "It does not approve a provider run or establish scientific truth.",
+      "depends_on": []
+    },
+    {
+      "id": "QK-CAPS",
+      "name": "Capability Registry",
+      "kind": "defense",
+      "status": "seeded",
+      "does": "Records dated capabilities, openness, lock-in, regions, limits, profiles, and source evidence.",
+      "does_not": "It does not guarantee live availability, pricing, suitability, or vendor claims.",
+      "depends_on": []
+    },
+    {
+      "id": "QK-SIM",
+      "name": "Simulator Matrix",
+      "kind": "creation",
+      "status": "seeded",
+      "does": "Runs local reference and, later, independent framework simulations against shared fixtures.",
+      "does_not": "It does not turn simulator output into hardware evidence.",
+      "depends_on": ["QK-CORE", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QK-IR",
+      "name": "Standards Bridge",
+      "kind": "bridge",
+      "status": "proposed",
+      "does": "Exports and validates OpenQASM and QIR with profile, loss, and native-sidecar receipts.",
+      "does_not": "It does not pretend that analog, annealing, pulse, and gate programs are interchangeable.",
+      "depends_on": ["QK-CORE", "QK-CAPS"]
+    },
+    {
+      "id": "QK-ROUTER",
+      "name": "Provider Access Broker",
+      "kind": "defense",
+      "status": "gated",
+      "does": "Will enforce simulator-first routing, credential scope, data and region policy, price ceilings, cancellation, and no automatic retry.",
+      "does_not": "It does not grant credentials, credits, spending, or provider authority.",
+      "depends_on": ["QK-CORE", "QK-CAPS", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QK-EVIDENCE",
+      "name": "Quantum Receipt Ledger",
+      "kind": "defense",
+      "status": "seeded",
+      "does": "Binds sources, versions, compilation, target, shots, results, baseline, cost, and limitations to a dated evidence grade.",
+      "does_not": "It does not create truth, identity, consent, reputation, reward, or on-chain finality.",
+      "depends_on": ["QK-CORE"]
+    },
+    {
+      "id": "QK-CLAIM",
+      "name": "Advantage Claim Gate",
+      "kind": "defense",
+      "status": "proposed",
+      "does": "Maps evidence from E0 through E5 and reserves practical-advantage language for robust operational evidence.",
+      "does_not": "It does not make a benchmark fair merely by labelling it.",
+      "depends_on": ["QK-EVIDENCE"]
+    },
+    {
+      "id": "QK-CHEM",
+      "name": "Chemistry and Materials Forge",
+      "kind": "creation",
+      "status": "proposed",
+      "does": "Will compare active-space, Hamiltonian, sampling, embedding, mitigation, and resource-estimation workflows.",
+      "does_not": "It does not promise commercial chemistry advantage from present QPUs.",
+      "depends_on": ["QK-CORE", "QK-SIM", "QK-IR", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QK-OPT",
+      "name": "Optimization Arena",
+      "kind": "creation",
+      "status": "proposed",
+      "does": "Will compare exact, MIP, local-search, heuristic, annealing, gate, and justified analog mappings under one problem contract.",
+      "does_not": "It does not attribute a managed hybrid result to a hidden quantum component.",
+      "depends_on": ["QK-CORE", "QK-SIM", "QK-EVIDENCE", "QK-CLAIM"]
+    },
+    {
+      "id": "QK-EST",
+      "name": "Fault-Tolerant Observatory",
+      "kind": "research",
+      "status": "proposed",
+      "does": "Will compare logical and physical resource estimates across explicit error-correction and hardware assumptions.",
+      "does_not": "It does not convert an estimate into a vendor roadmap or delivery date.",
+      "depends_on": ["QK-CORE", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QK-GUILD",
+      "name": "Quantum Learning Commons",
+      "kind": "creation",
+      "status": "proposed",
+      "does": "Creates tutorials, fixtures, contribution paths, reviewer credit, and independent reproductions.",
+      "does_not": "It does not turn credentials or expertise into unchallengeable jurisdiction.",
+      "depends_on": ["QK-CORE", "QK-CLAIM"]
+    },
+    {
+      "id": "QS-01",
+      "name": "Cryptographic Census",
+      "kind": "defense",
+      "status": "proposed",
+      "does": "Inventories algorithms, protocols, trust roots, dependencies, lifetimes, owners, and migration targets without key material.",
+      "does_not": "It does not read, store, rotate, or revoke keys.",
+      "depends_on": []
+    },
+    {
+      "id": "QS-02",
+      "name": "Algorithm Policy Boundary",
+      "kind": "defense",
+      "status": "proposed",
+      "does": "Separates KEM, signature, AEAD, and hashing policy; pins reviewed suites; prevents downgrade; records expiring exceptions.",
+      "does_not": "It does not invent algorithms or keep every legacy option enabled in the name of agility.",
+      "depends_on": ["QS-01", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QS-03",
+      "name": "Hybrid Transport Lab",
+      "kind": "defense",
+      "status": "gated",
+      "does": "Will test standards-track hybrid TLS in a controlled canary and measure negotiation, fallback, size, latency, and interoperability.",
+      "does_not": "It does not treat PQ key agreement as PQ authentication or production approval.",
+      "depends_on": ["QS-01", "QS-02", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QS-04",
+      "name": "Long-Lived Proof Transition",
+      "kind": "defense",
+      "status": "proposed",
+      "does": "Tests explicit all-required traditional and post-quantum proof sets, rotation, revocation, and historical verification.",
+      "does_not": "It does not infer personhood, consciousness, continuity, consent, or authority from a signature.",
+      "depends_on": ["QS-01", "QS-02", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QS-05",
+      "name": "Ledger Quantum-Readiness Lab",
+      "kind": "research",
+      "status": "proposed",
+      "does": "Benchmarks signature size, verification, throughput, state growth, gossip, rotation, recovery, and legacy exposure before any Zerone design choice.",
+      "does_not": "It does not call Zerone quantum-safe or modify consensus.",
+      "depends_on": ["QS-01", "QS-02", "QK-EVIDENCE", "QK-CLAIM"]
+    },
+    {
+      "id": "QN-01",
+      "name": "Quantum Network Commons",
+      "kind": "research",
+      "status": "proposed",
+      "does": "Models entanglement requests, classical control, topology, fidelity, latency, expiry, failure, and reproducibility in open simulators.",
+      "does_not": "It does not claim a deployed quantum network or production security.",
+      "depends_on": ["QK-CORE", "QK-SIM", "QK-EVIDENCE"]
+    },
+    {
+      "id": "QN-02",
+      "name": "Entanglement Allocation Governance",
+      "kind": "defense",
+      "status": "proposed",
+      "does": "Makes scarce-resource priority, allocation, wait, preemption, failure, consumption, and appeal legible.",
+      "does_not": "It does not let money, status, or institutional prestige silently become scheduler priority.",
+      "depends_on": ["QN-01", "QK-EVIDENCE"]
+    }
+  ],
+  "power_centers": [
+    {
+      "id": "cloud-brokers",
+      "controller": "Hyperscalers and access brokers",
+      "leverage": "Accounts, regions, credentials, queues, billing, storage, logs, and provider routing.",
+      "risk": "Spend, data, retry, and availability become opaque or hard to exit.",
+      "counterweight": "Local-first execution, minimized payloads, explicit price and retry caps, exportable artifacts, and a second route.",
+      "hold_authority": "A separate budget and data steward can stop external execution."
+    },
+    {
+      "id": "hardware-vendors",
+      "controller": "QPU and control-stack vendors",
+      "leverage": "Native gates, topology, calibration, pulse access, emulators, roadmaps, and result interpretation.",
+      "risk": "Marketing metrics or native capabilities define the question and comparison.",
+      "counterweight": "Canonical problems, raw and compiled artifact retention, calibration receipts, modality comparison, and exit tests.",
+      "hold_authority": "An independent reproduction reviewer can hold promotion."
+    },
+    {
+      "id": "framework-maintainers",
+      "controller": "SDK, compiler, and plugin maintainers",
+      "leverage": "APIs, defaults, deprecations, transformations, gradients, and supported backends.",
+      "risk": "Invisible compiler or API changes alter results or make an ecosystem indispensable.",
+      "counterweight": "Version pins, conformance fixtures, semantic receipts, native sidecars, and multiple implementations.",
+      "hold_authority": "The capability gate rejects unreviewed version or semantic changes."
+    },
+    {
+      "id": "standards-governors",
+      "controller": "Standards alliances and protocol bodies",
+      "leverage": "The interchange vocabulary, profiles, identifiers, and compatibility rules.",
+      "risk": "Nominal openness hides incomplete profiles, patent terms, or implementer asymmetry.",
+      "counterweight": "Public issue participation, licence and patent review, reference tests, and explicit unsupported features.",
+      "hold_authority": "Legal and technical review can keep a standard out of a release profile."
+    },
+    {
+      "id": "benchmark-owners",
+      "controller": "Problem, dataset, metric, and comparison designers",
+      "leverage": "They define what counts as success and which classical work is visible.",
+      "risk": "Cherry-picking, parameter fishing, weak baselines, and hidden preprocessing manufacture advantage.",
+      "counterweight": "Preregistration, strong baseline review, total-cost accounting, negative results, and independent replication.",
+      "hold_authority": "A baseline reviewer independent of the implementer can refuse the claim grade."
+    },
+    {
+      "id": "funders-and-sponsors",
+      "controller": "Grant makers, investors, vendors, and programme sponsors",
+      "leverage": "Access, time, visibility, salaries, equipment, and the problem agenda.",
+      "risk": "Funding converts into suppressed negatives, inflated claims, or governance influence.",
+      "counterweight": "Conflict disclosure, sponsor-independent release review, diversified support, and a mission-fit stop rule.",
+      "hold_authority": "The rights and release steward can stop sponsor-shaped publication."
+    },
+    {
+      "id": "experts-and-credentialers",
+      "controller": "Researchers, reviewers, educators, and credentialing institutions",
+      "leverage": "Interpretation, language, access, status, and qualification.",
+      "risk": "Expertise becomes jurisdiction or a priesthood that cannot be challenged.",
+      "counterweight": "Plain-language curricula, reproducible fixtures, dissent, appeal, documented uncertainty, and reviewer rotation.",
+      "hold_authority": "A rights-aware appeal path can challenge expertise without retaliation."
+    },
+    {
+      "id": "data-custodians",
+      "controller": "Holders of scientific, commercial, personal, or operational data",
+      "leverage": "They determine which questions can be tested and which payloads can leave a boundary.",
+      "risk": "Sensitive data is exposed through circuits, parameters, logs, provider retention, or immutable receipts.",
+      "counterweight": "Synthetic-first work, data minimization, local preprocessing, classification, retention limits, and digest-only evidence.",
+      "hold_authority": "The data steward can veto export regardless of scientific value."
+    },
+    {
+      "id": "ledger-governance",
+      "controller": "Validators, maintainers, treasury, token holders, and bridge operators",
+      "leverage": "They can convert receipts into permanence, rewards, qualification, or economic weight.",
+      "risk": "Spectacular claims become immutable, rewarded, or politically authoritative before reproduction.",
+      "counterweight": "Off-chain first, candidate-only projections, zero reward, challenge periods, corrections, replay protection, and separation of powers.",
+      "hold_authority": "No automatic Zerone projection; independent evidence and governance holds remain required."
+    },
+    {
+      "id": "quantum-network-schedulers",
+      "controller": "Entanglement and memory allocation policy",
+      "leverage": "Priority, fidelity, deadlines, preemption, routing, and expiring scarce resources.",
+      "risk": "Money, status, or institutional prestige silently controls access and creates starvation.",
+      "counterweight": "Decision receipts, declared authority, fairness metrics, denial-of-service tests, cancellation, and appeal.",
+      "hold_authority": "A governance reviewer can freeze an allocation policy before any external deployment."
+    }
+  ]
+}

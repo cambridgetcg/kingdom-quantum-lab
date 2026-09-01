@@ -1,0 +1,892 @@
+{
+  "$schema": "../schemas/product-portfolio.v1.schema.json",
+  "schema": "kingdom.product-portfolio/v1",
+  "as_of": "2026-09-01",
+  "boundary": "This is a product and business architecture, not deployed moderation, consent, treasury, governance, quantum advantage, legal compliance, or publication authority. Existing prototype evidence is named per product; all other capability remains declared only.",
+  "power_architecture_ref": {
+    "snapshot_schema": "kingdom.power-module-snapshot/v1",
+    "registry_schema": "kingdom.power-module-registry/v0.2",
+    "source": "registry/power-modules.snapshot.json",
+    "source_sha256": "2540b751fc921ee8f86c942547ee4fb66e8876a9a265ff1c901ab81827452a57",
+    "snapshot_date": "2026-08-30",
+    "status": "proposed-unwired-reference"
+  },
+  "constitutional_invariants": {
+    "standing_rights_votable": false,
+    "binding_acts_in_heightened_context": false,
+    "global_person_score": false,
+    "tradable_evidence_or_governance_token": false,
+    "payment_buys_consent_or_authority": false,
+    "evidence_grade_changes_person_authority": false,
+    "moderation_changes_scientific_grade": false,
+    "consent_public_or_immutable_by_default": false
+  },
+  "implementation_truth": {
+    "portfolio_validation_proves_runtime_enforcement": false,
+    "social_financial_or_governance_effects_wired": false,
+    "power_counterweights_wired": false
+  },
+  "principles": [
+    "Persuasion is evaluated by disclosure, context, choice, dependency, reversibility, and aftermath rather than by whether the speaker believes the goal is good.",
+    "Consent authorizes one specific binding act; it is not inferred from attention, participation, payment, role, silence, identity, prior consent, or a signature alone.",
+    "Reward useful work regardless of whether a hypothesis succeeds; never pay for a desired scientific conclusion.",
+    "Evidence grade belongs to a scoped claim, never to the global worth or authority of its author.",
+    "Money, status, expertise, technical access, reputation, and community belonging never convert automatically into governance or enforcement authority.",
+    "Moderation restricts the smallest necessary action or capability and preserves notice, expiry, appeal, privacy, refusal, and repair.",
+    "Binding acts occur through neutral interfaces outside heightened-attention, ritualized, urgent, or dependency-leveraging contexts.",
+    "Every outward product has a separately controlled counterweight able to hold release, plus an honest exit and repair route."
+  ],
+  "conversion_firewalls_sha256": "cf365ef14cec753288a42555fd8111641cf42c903cfcdb76953070614f6482d1",
+  "conversion_firewalls": [
+    {
+      "id": "CF-01",
+      "source": "attention",
+      "target": "choice",
+      "risk": "Cadence, repetition, ranking, prestige, or urgency narrows attention before alternatives are considered.",
+      "gate": "Disclose source, sponsor, intended action, material techniques, uncertainty, and a functionally equal quiet or plain route before exposure.",
+      "automatic": false
+    },
+    {
+      "id": "CF-02",
+      "source": "choice",
+      "target": "consent",
+      "risk": "A click or continued presence is treated as informed and freely given authorization.",
+      "gate": "State the exact act, data, recipient, duration, consequences, alternatives, withdrawal route, and comprehension check with a neutral no-action option.",
+      "automatic": false
+    },
+    {
+      "id": "CF-03",
+      "source": "consent",
+      "target": "binding act",
+      "risk": "Old, broad, coerced, or context-specific consent is replayed after purpose, party, risk, or capability changes.",
+      "gate": "Revalidate current scope, authority, affected parties, expiry, withdrawal state, dependency health, and material transition before execution.",
+      "automatic": false
+    },
+    {
+      "id": "CF-04",
+      "source": "interest or consent",
+      "target": "payment",
+      "risk": "Parasocial obligation, scarcity, arousal, fear, sunk cost, or repeated prompts turn interest into financially pressured action.",
+      "gate": "Use a neutral checkout, full cost and renewal preview, spending cap, cooling-off where consequential, persistent refusal, simple cancellation, and no unrelated penalty.",
+      "automatic": false
+    },
+    {
+      "id": "CF-05",
+      "source": "evidence",
+      "target": "claim language",
+      "risk": "A simulation, weak baseline, vivid anecdote, or sponsor-preferred result is promoted beyond what it establishes.",
+      "gate": "Require preregistration, strong baseline review, permitted-language templates, conflicts, evidence grade, expiry, correction links, and independent reproduction at the relevant level.",
+      "automatic": false
+    },
+    {
+      "id": "CF-06",
+      "source": "claim language",
+      "target": "attention",
+      "risk": "Ranking systems reward certainty and spectacle while null results, uncertainty, and correction disappear.",
+      "gate": "Provide chronological or unranked views, equal correction visibility, negative-result lanes, sponsor labels, and no engagement-only ranking.",
+      "automatic": false
+    },
+    {
+      "id": "CF-07",
+      "source": "claim or receipt",
+      "target": "reward",
+      "risk": "First-mover rewards induce racing, selective reporting, weak baselines, fabricated novelty, and resistance to correction.",
+      "gate": "Prepay defined labour independent of outcome, reserve reproduction funding under separate control, compensate null and corrective work, prohibit payment for a desired result or evidence grade, and allocate future resources through separate task criteria.",
+      "automatic": false
+    },
+    {
+      "id": "CF-08",
+      "source": "reward or contribution",
+      "target": "reputation",
+      "risk": "Money, volume, popularity, or one domain result becomes a scalar judgment of a person and makes dissent costly.",
+      "gate": "Use contextual, evidence-linked, expiring contribution records with correction and appeal; prohibit global person scores and inactivity penalties.",
+      "automatic": false
+    },
+    {
+      "id": "CF-09",
+      "source": "reputation, expertise, wealth, or access",
+      "target": "governance or scarce-resource priority",
+      "risk": "Incumbents become self-certifying and wealth or vendor access becomes jurisdiction.",
+      "gate": "Constitute governance separately; use scoped role mandates, transparent allocation criteria, conflicts, rotation, starvation metrics, expiry, and independent appeal.",
+      "automatic": false
+    },
+    {
+      "id": "CF-10",
+      "source": "moderation report or enforcement decision",
+      "target": "exclusion, financial loss, or scientific grade",
+      "risk": "Brigades, opaque moderators, or status-weighted reports punish dissent or remove livelihood without due process.",
+      "gate": "Separate conduct from evidence review, detect correlated reporting, apply the least restrictive expiring action, disclose conflicts, and provide notice, independent appeal, and repair.",
+      "automatic": false
+    },
+    {
+      "id": "CF-11",
+      "source": "participation or submission",
+      "target": "licence, reuse, endorsement, or ownership",
+      "risk": "Contest entry, community membership, or attribution is interpreted as perpetual broad permission or creator endorsement.",
+      "gate": "Separate eligibility from licence; name each use, duration, territory, attribution, compensation, downstream recipient, withdrawal point, and non-winning treatment before contribution.",
+      "automatic": false
+    },
+    {
+      "id": "CF-12",
+      "source": "evidence, consent, or moderation record",
+      "target": "immutable ledger or public permanence",
+      "risk": "Hashes or signatures are mistaken for truth or anonymity while errors and sensitive relationships become permanent.",
+      "gate": "Keep raw and personal state private and off-chain; project only minimized candidate status after review, with zero automatic reward, authority, identity, or retention effect.",
+      "automatic": false
+    }
+  ],
+  "products": [
+    {
+      "id": "KP-INFLUENCE-LENS",
+      "name": "KINGDOM Influence Lens",
+      "family": "constitutional",
+      "design_stage": "contract",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No influence-card renderer, linter, interface, or conformance fixture is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "people evaluating an offer, campaign, community invitation, or public claim",
+        "product, communications, safety, and governance teams"
+      ],
+      "job_to_be_done": "Make persuasive power legible before a person is asked to choose, pay, join, disclose, vote, or grant access.",
+      "does": "Specifies a plain influence card covering source, sponsor, desired action, techniques, evidence, uncertainty, targeting basis, intensity, dependency, alternatives, cooldown, and exit.",
+      "does_not": "It does not diagnose manipulation, infer psychological vulnerability, score a person, block ordinary expression, or make the decision for the participant.",
+      "workflow": [
+        "Declare source, beneficiary, sponsor, desired action, audience, channel, duration, and material techniques.",
+        "Attach neutral claims, sources, counterevidence, uncertainty, total cost, and the plain route.",
+        "Run the Power Table and separate any binding act from persuasive presentation.",
+        "Show quiet, chronological, reset, pause, refusal, and complaint controls.",
+        "Record only the disclosure version and product decision, not a vulnerability profile."
+      ],
+      "business_model": {
+        "description": "Free local schema and reader; fixed-price organizational review or hosted disclosure management.",
+        "revenue_events": ["free-open-core", "fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "The product cannot optimize conversion, compliance, emotional intensity, or individualized susceptibility; customers pay for legibility and auditability rather than influence yield.",
+      "rights_counterweights": [
+        "equal plain-language route and neutral no-action option",
+        "no sensitive-data or inferred-vulnerability targeting",
+        "persistent opt-out and frequency limits",
+        "independent complaint and correction route"
+      ],
+      "firewall_dependencies": ["CF-01", "CF-04", "CF-05", "CF-06"],
+      "module_dependencies": ["QK-EVIDENCE", "QK-CLAIM"],
+      "power_dependencies": ["KPM-D01", "KPM-D02", "KPM-D03", "KPM-D04"],
+      "product_dependencies": [],
+      "success_metrics": [
+        "comprehension of source, sponsor, action, cost, uncertainty, and exit",
+        "plain-route parity and persistent opt-out success",
+        "correction latency and unresolved disclosure conflicts"
+      ],
+      "forbidden_metrics": [
+        "conversion rate",
+        "time captured",
+        "compliance or emotional-intensity score"
+      ],
+      "mvp_boundary": "Static local influence-card schema, renderer, examples, and lint rules; no personalization, ranking, live surveillance, or automated moral judgment.",
+      "release_gate": "Independent review must show that the plain route, no-action choice, sponsor disclosure, targeting boundary, binding-act separation, and deletion controls work end to end."
+    },
+    {
+      "id": "KP-CONSENT-GATE",
+      "name": "KINGDOM Consent Gate",
+      "family": "constitutional",
+      "design_stage": "contract",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No grant store, policy intersection, withdrawal propagation, participant interface, or independent conformance suite is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "participants facing a specific optional binding act",
+        "services that must keep consent, permission, authority, and legal basis distinct"
+      ],
+      "job_to_be_done": "Present one consequential act neutrally, record its exact scope, and preserve refusal, prospective withdrawal, downstream propagation, and repair.",
+      "does": "Specifies private versioned consent grants tied to an act, purpose, data, recipient, duration, consequences, representative authority, and withdrawal route.",
+      "does_not": "A grant does not prove inner willingness, identity continuity, consciousness, universal permission, another party's consent, or enforce downstream deletion by itself.",
+      "workflow": [
+        "Present the act and alternatives outside persuasive, ritualized, urgent, or heightened-attention contexts.",
+        "Check scope, comprehension, affected parties, actual authority, expiry, and current withdrawal state.",
+        "Issue a minimal private grant or refusal under deployment-held encryption keys without putting sensitive state on a public ledger or exposing it to the hosted operator.",
+        "Intersect the grant with technical permission at execution time and fail closed on material change.",
+        "Propagate withdrawal for future processing and expose export, appeal, deletion, and repair evidence."
+      ],
+      "business_model": {
+        "description": "Open contract and local verifier; fixed subscription or support contract for private organizational integration.",
+        "revenue_events": ["free-open-core", "fixed-subscription", "fixed-fee"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "Payment, access to basic service, status, relationship, or repeated prompts cannot depend on granting optional consent; refusal is final for the declared quiet period, and the affected participant controls export and withdrawal even when an organization pays for hosting.",
+      "rights_counterweights": [
+        "specific neutral affirmative choice with equal refusal",
+        "prospective withdrawal and downstream propagation",
+        "private off-chain storage and data minimization",
+        "participant-controlled export and withdrawal with independent appeal",
+        "neutral locked templates, refusal-function parity, deployment-held encryption keys, and independent conformance testing"
+      ],
+      "firewall_dependencies": ["CF-01", "CF-02", "CF-03", "CF-04", "CF-12"],
+      "module_dependencies": ["QK-EVIDENCE"],
+      "power_dependencies": ["KPM-D03", "KPM-D05", "KPM-D07", "KPM-D09"],
+      "product_dependencies": ["KP-INFLUENCE-LENS"],
+      "success_metrics": [
+        "scope comprehension and material-change rejection",
+        "withdrawal propagation and deletion evidence",
+        "refusal persistence without unrelated penalty"
+      ],
+      "forbidden_metrics": [
+        "consent acceptance rate",
+        "number of grants per person",
+        "re-consent success after refusal"
+      ],
+      "mvp_boundary": "Local private grant/refusal objects, policy intersection, expiry, withdrawal, and test fixtures; no biometric inference, blockchain anchoring, or claim to settle legal validity.",
+      "release_gate": "Independent conformance tests must reject silence, defaults, stale grants, new purposes, new recipients, withdrawn grants, missing representative authority, permission widening, refusal-function disparity, and hosted-operator access to plaintext grants."
+    },
+    {
+      "id": "KP-PROOF-COMMONS",
+      "name": "KINGDOM Proof Commons",
+      "family": "constitutional",
+      "design_stage": "prototype",
+      "implementation": {
+        "state": "partial-local-prototype",
+        "evidence_refs": [
+          {
+            "path": "src/kingdom_quantum_lab/simulator.py",
+            "sha256": "f1e082e7023886c98911c13da336ff3d2cd48db3b92ff22ca647e53426af1d9c"
+          },
+          {
+            "path": "src/kingdom_quantum_lab/data/schemas/quantum-run-receipt.v1.schema.json",
+            "sha256": "78adfedc09a0feb9b24787b37ed71fefce5b746c6a63555ebc91f5097b648838"
+          }
+        ],
+        "known_gaps": ["Only strict local E0 experiment and receipt contracts are implemented; claim promotion, role separation, reproduction pools, disputes, corrections, rewards, and release remain unwired."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "researchers, builders, reviewers, independent reproducers, and affected communities",
+        "organizations publishing bounded technical or scientific claims"
+      ],
+      "job_to_be_done": "Move a scoped claim from preregistration through baseline review, reproduction, correction, and expiry without converting it into personal authority.",
+      "does": "Specifies versioned claim, experiment, evidence, reproduction, conflict, permitted-language, correction, and release objects using the E0-E5 ladder; the current lab implements only strict local E0 experiment and receipt validation.",
+      "does_not": "It does not establish universal truth, rank people, guarantee scientific quality, mint tokens, determine conduct sanctions, or write automatically to Zerone.",
+      "workflow": [
+        "Preregister the hypothesis, baseline, metric, stop rule, rights boundary, cost, conflicts, and permitted claim ceiling.",
+        "Run through a bounded adapter and emit content- and source-bound evidence.",
+        "Separate author, baseline reviewer, reproducer, data or rights steward, and release authority.",
+        "Promote only the scoped claim through candidate, baseline-reviewed, reproduction-pending, approved, disputed, corrected, or expired states.",
+        "Give negative results, minority evidence, corrections, and failed replications durable visibility."
+      ],
+      "business_model": {
+        "description": "Open local contracts and verifier; fixed-price private hosting, reproducibility operations, or audit support.",
+        "revenue_events": ["free-open-core", "fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "Labour compensation is declared before results and paid regardless of outcome; reproduction and correction pools are independently controlled, and no grade automatically changes money, visibility, access, or governance.",
+      "rights_counterweights": [
+        "claim-scoped grades rather than person scores",
+        "role and conflict separation with release holds",
+        "negative-result, challenge, correction, and expiry paths",
+        "private raw evidence with minimized public projection"
+      ],
+      "firewall_dependencies": ["CF-05", "CF-06", "CF-07", "CF-08", "CF-12"],
+      "module_dependencies": ["QK-CORE", "QK-EVIDENCE", "QK-CLAIM"],
+      "power_dependencies": ["KPM-O06", "KPM-D01", "KPM-D04", "KPM-D06", "KPM-D07", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-INFLUENCE-LENS"],
+      "success_metrics": [
+        "independent reproduction and disagreement visibility",
+        "claim-language conformance and expiry",
+        "negative-result compensation parity and correction latency"
+      ],
+      "forbidden_metrics": [
+        "positive-result rate",
+        "receipts produced per person",
+        "engagement-weighted truth or author score"
+      ],
+      "mvp_boundary": "The current quantum lab supplies strict E0 experiment and receipt contracts plus deterministic local verification. Reproduction workflow, promotion roles, disputes, reward handling, and Zerone projection remain unwired.",
+      "release_gate": "Ten thousand valid E0 receipts must create no automatic reward, rank, access, visibility, governance, publication, or chain effect; sponsor-reviewer conflicts must hold promotion."
+    },
+    {
+      "id": "KP-STEWARD",
+      "name": "KINGDOM Stewardship Console",
+      "family": "constitutional",
+      "design_stage": "contract",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No report store, triage interface, role assignment, decision engine, appeal route, privacy control, or retention test is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "community members, reporters, moderators, reviewers, and appeal stewards",
+        "operators of learning, research, creator, and partner communities"
+      ],
+      "job_to_be_done": "Protect people and shared spaces while preventing moderation, popularity, wealth, or scientific disagreement from becoming unreviewable social power.",
+      "does": "Specifies privacy-aware report triage, least-restrictive safeguards, evidence review, reasoned expiring decisions, recusal, independent appeal, and repair.",
+      "does_not": "It does not auto-ban from report volume, create a public strike ledger, settle scientific truth, compel mediation or apology, or remove standing rights.",
+      "workflow": [
+        "Publish versioned rules, jurisdiction, evidence standard, possible actions, privacy, and appeal before participation.",
+        "Receive a minimized report and check immediate safety, retaliation, conflicts, and alternative containment; brigade screening may use only within-case timing and content similarity with short retention, never IP, device fingerprints, or cross-community social graphs.",
+        "Apply only a necessary temporary safeguard with hard expiry when urgent.",
+        "Separate conduct review from claim review and issue a reasoned scoped decision with notice where safe.",
+        "Offer appeal outside the original chain, voluntary repair, expiry review, and correction without forced contact."
+      ],
+      "business_model": {
+        "description": "Fixed-price community operations tooling and support.",
+        "revenue_events": ["fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "Community status, donations, sponsor relationships, token holdings, popularity, or report volume cannot increase adjudicative weight; appeals are free.",
+      "rights_counterweights": [
+        "least-restrictive scoped and expiring action",
+        "anti-brigade review uses only within-case timing and content similarity, short retention, access controls, and false-positive review; no IP, device fingerprint, or cross-community identity graph",
+        "recusal and independent appeal",
+        "privacy, anti-retaliation, voluntary repair, and no global stigma"
+      ],
+      "firewall_dependencies": ["CF-08", "CF-10", "CF-12"],
+      "module_dependencies": ["QK-EVIDENCE", "QK-CLAIM"],
+      "power_dependencies": ["KPM-D01", "KPM-D05", "KPM-D06", "KPM-D07", "KPM-D08"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-PROOF-COMMONS"],
+      "success_metrics": [
+        "appeal access, decision expiry, proportionality, and repair completion",
+        "retaliation, recusal, recurrence, and brigade-detection outcomes",
+        "separation between conduct action and scientific grade"
+      ],
+      "forbidden_metrics": [
+        "number of bans or removals",
+        "reporter or moderator popularity",
+        "community compliance score"
+      ],
+      "mvp_boundary": "Versioned rules, private reports, temporary holds, decision receipts, conflict checks, expiry, appeal, short-retention, access-control, and false-positive fixtures; no automated guilt judgment, IP/device fingerprinting, social graph, or cross-community blacklist.",
+      "release_gate": "A coordinated report brigade must not trigger automatic punishment; an emergency action must expire and receive independent post-review while the affected party retains appeal."
+    },
+    {
+      "id": "KP-COMMON-TABLE",
+      "name": "KINGDOM Common Table",
+      "family": "constitutional",
+      "design_stage": "contract",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No proposal, decision-class, recusal, dissent, mandate, expiry, appeal, or execution-separation interface is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "contributors, affected parties, delegates, project stewards, and resource operators",
+        "communities making shared technical, budget, policy, or release decisions"
+      ],
+      "job_to_be_done": "Make consequential shared decisions with explicit jurisdiction, evidence, dissent, conflicts, expiry, and appeal without treating popularity as consent.",
+      "does": "Specifies separation among proposals, affected-party rights, advisory signals, delegated mandates, shared-resource decisions, emergency holds, minority reports, and executable authorization.",
+      "does_not": "It does not let a majority vote away standing rights, manufacture another party's consent, buy votes, turn tokens into jurisdiction, or make moderators the default government.",
+      "workflow": [
+        "Declare the decision class, jurisdiction, affected parties, governing rule, evidence, uncertainty, alternatives, reversibility, and non-votable rights.",
+        "Publish a plain brief and counterbrief, disclose sponsors and conflicts, enable private or pseudonymous input, and recuse incompatible roles.",
+        "Use advisory deliberation, affected-party consent, a scoped delegated mandate, or collective resource governance according to the decision class.",
+        "Issue a time-bounded decision receipt that names authority, dissent, conditions, execution owner, review date, appeal, and rollback.",
+        "Require a new gate before treasury transfer, access change, publication, deployment, or another external binding effect."
+      ],
+      "business_model": {
+        "description": "Open local decision contracts with fixed-price hosted workspaces, facilitation, or support.",
+        "revenue_events": ["free-open-core", "fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "Donations, status, role seniority, public acclamation, urgency, attendance, contribution volume, or moderator access cannot increase the weight of a person's rights or silently widen jurisdiction.",
+      "rights_counterweights": [
+        "standing rights and affected-party consent remain outside majority rule",
+        "minority reports, accessible plain briefs, privacy, refusal, and no retaliation",
+        "conflict recusal, rotating scoped mandates, independent appeal, and hard expiry",
+        "advisory preference remains separate from technical permission and execution"
+      ],
+      "firewall_dependencies": ["CF-02", "CF-03", "CF-09", "CF-10", "CF-12"],
+      "module_dependencies": ["QK-GUILD", "QK-EVIDENCE", "QK-CLAIM"],
+      "power_dependencies": ["KPM-D01", "KPM-D03", "KPM-D04", "KPM-D06", "KPM-D07", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-PROOF-COMMONS", "KP-STEWARD"],
+      "success_metrics": [
+        "decision-class accuracy, affected-party coverage, dissent visibility, and comprehension",
+        "conflict recusal, mandate expiry, appeal independence, and rollback completion",
+        "separation between advisory preference, consent, permission, and execution"
+      ],
+      "forbidden_metrics": [
+        "turnout, unanimity, or consensus treated as legitimacy by itself",
+        "wealth, token, popularity, or contribution-weighted jurisdiction",
+        "number of binding actions automated"
+      ],
+      "mvp_boundary": "Local proposal, brief, counterbrief, conflict, deliberation, advisory decision, dissent, expiry, and appeal objects; no treasury transfer, credential change, production deployment, public vote, or external execution.",
+      "release_gate": "A wealthy founder, popular moderator, unanimous audience, or emergency label must still be unable to override standing rights, affected-party consent, jurisdiction, independent appeal, or expiry."
+    },
+    {
+      "id": "KP-TREASURY-GATE",
+      "name": "KINGDOM Treasury and Reward Gate",
+      "family": "constitutional",
+      "design_stage": "contract",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No funding-plan interface, sponsor-conflict hold, reproduction reserve, payment instruction, custody, or execution integration is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "contributors, sponsors, budget stewards, researchers, reviewers, and independent reproducers",
+        "teams allocating grants, compute, prizes, revenue shares, or bounties"
+      ],
+      "job_to_be_done": "Fund useful work and shared capability without purchasing conclusions, consent, status, priority, enforcement, or governance.",
+      "does": "Specifies separation among labour pay, expense reimbursement, reproduction reserves, correction funds, sponsor conflicts, contributor splits, cost caps, milestone completion, and treasury release decisions.",
+      "does_not": "It does not issue a tradable evidence token, slash honest null results, let wealth weight review, make payment proof of licence, or convert reward into governance.",
+      "workflow": [
+        "Declare work scope, fixed compensation, expenses, licence, attribution, conflicts, and outcome independence before execution.",
+        "Fund original work, independent reproduction, null or refutation work, maintenance, and correction through separately controlled pools.",
+        "Keep scientific grade, conduct, budget approval, and payment execution under distinct mandates.",
+        "Use cost ceilings, no automatic retry, cancellation, concentration monitoring, and transparent sponsor terms.",
+        "Release fixed labour pay on protocol completion; handle deliberate fraud separately through due process rather than punishing failed hypotheses."
+      ],
+      "business_model": {
+        "description": "Cost-recovery or fixed subscription for budgeting, contributor accounting, and audit support.",
+        "revenue_events": ["cost-recovery", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "No countdowns, guilt, relationship leverage, access loss, sunk-cost prompts, hidden renewals, outcome-conditioned pay, or pay-to-appeal; neutral checkout is separated from persuasive content.",
+      "rights_counterweights": [
+        "fixed fair labour compensation independent of result",
+        "separate reproduction and correction reserves",
+        "sponsor concentration, conflict, cancellation, and exit controls",
+        "no token, reputation, access, or governance conversion"
+      ],
+      "firewall_dependencies": ["CF-04", "CF-07", "CF-08", "CF-09", "CF-11", "CF-12"],
+      "module_dependencies": ["QK-EVIDENCE", "QK-CLAIM", "QK-ROUTER"],
+      "power_dependencies": ["KPM-O05", "KPM-D01", "KPM-D04", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-PROOF-COMMONS", "KP-COMMON-TABLE"],
+      "success_metrics": [
+        "pay parity across positive, negative, reproduction, and correction work",
+        "budget cancellation, sponsor concentration, and conflict-hold performance",
+        "contributor licence, attribution, compensation, and exit coverage"
+      ],
+      "forbidden_metrics": [
+        "return tied to positive findings",
+        "transaction or token volume",
+        "spend treated as loyalty or epistemic weight"
+      ],
+      "mvp_boundary": "Static funding-plan, contributor-term, conflict, cost-cap, reproduction-reserve, and release-receipt contracts; no custody, payment execution, token, investment, or financial advice.",
+      "release_gate": "A sponsor controlling the author and reviewer must be unable to promote or suppress a claim, and a failed hypothesis must not cancel fair predeclared labour pay."
+    },
+    {
+      "id": "KP-CREATOR-FORGE",
+      "name": "KINGDOM Creator Forge",
+      "family": "constitutional",
+      "design_stage": "contract",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No tutorial pathway, submission contract, reuse gate, credit receipt, artifact verifier, fee-waiver route, or review process is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "observers, learners, contributors, toolmakers, reviewers, and specialist partners",
+        "communities building reusable public or commercial modules"
+      ],
+      "job_to_be_done": "Turn an audience into a voluntary learning and contribution ecosystem with accessible tools, scoped reuse, credit, compensation, review, and exit.",
+      "does": "Specifies tutorial-to-remix-to-submission-to-review-to-credit pathways, modular metadata, contributor terms, role-specific provenance, revenue-domain separation, and specialist recruitment.",
+      "does_not": "Participation does not grant blanket licence, endorsement, identity ownership, inward access, loyalty, unpaid labour, or founder immunity from review.",
+      "workflow": [
+        "Let newcomers observe and learn without forced performance, identity disclosure, payment, or status competition.",
+        "Offer accessible tutorials, synthetic fixtures, metadata standards, and multiple contribution roles.",
+        "Present eligibility separately from exact reuse, attribution, compensation, duration, withdrawal point, sponsor, and non-winning terms.",
+        "Use conflict-disclosed review with reasons, bounded override, appeal, and compensation for every accepted reuse.",
+        "Route successful specialists into scoped paid roles without converting contribution volume into governance."
+      ],
+      "business_model": {
+        "description": "Free learning commons and local self-verification; paid private team spaces, support, optional artifact review under public criteria and fee waivers, and transparent commercial modules with predeclared contributor shares.",
+        "revenue_events": ["free-open-core", "fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "No unlimited-submission grind, winner-take-all labour extraction, patron-only dignity, loyalty tests, compulsory public identity, sponsor influence hidden inside judging, or paid certification as a prerequisite for learning, work, appeal, or governance.",
+      "rights_counterweights": [
+        "observation and learning without contribution pressure",
+        "granular licence, attribution, compensation, withdrawal point, and non-winning terms",
+        "accessible routes, rest, refusal, disagreement, and appeal without rank loss",
+        "judge, sponsor, founder-override, and revenue conflicts made visible",
+        "artifact criteria are public, local self-verification is free, paid review has fee waivers and portability, and certification cannot gate commons, work, appeal, or governance"
+      ],
+      "firewall_dependencies": ["CF-01", "CF-02", "CF-07", "CF-08", "CF-09", "CF-11", "CF-12"],
+      "module_dependencies": ["QK-GUILD", "QK-EVIDENCE", "QK-CLAIM"],
+      "power_dependencies": ["KPM-O02", "KPM-O04", "KPM-D03", "KPM-D04", "KPM-D06", "KPM-D09"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-STEWARD", "KP-TREASURY-GATE"],
+      "success_metrics": [
+        "learner comprehension, artifact reuse, and specialist mobility",
+        "credit, licence, compensation, accessibility, and appeal coverage",
+        "contributor concentration, rest, withdrawal, and negative-result participation"
+      ],
+      "forbidden_metrics": [
+        "submission volume per person",
+        "unpaid accepted work",
+        "status, loyalty, or engagement as contribution quality"
+      ],
+      "mvp_boundary": "Tutorial, synthetic fixture, submission manifest, contributor terms, review rubric, credit receipt, and non-winning disposition; no live contest, prizes, external sponsor, or public upload.",
+      "release_gate": "A non-winning submission cannot be reused without the exact accepted licence and compensation terms, and a founder override must be reasoned, visible, appealable, and outside sponsor control."
+    },
+    {
+      "id": "KQ-COMMONS-STUDIO",
+      "name": "KINGDOM Quantum Commons Studio",
+      "family": "quantum",
+      "design_stage": "prototype",
+      "implementation": {
+        "state": "bounded-local-prototype",
+        "evidence_refs": [
+          {
+            "path": "src/kingdom_quantum_lab/simulator.py",
+            "sha256": "f1e082e7023886c98911c13da336ff3d2cd48db3b92ff22ca647e53426af1d9c"
+          },
+          {
+            "path": "src/kingdom_quantum_lab/data/schemas/experiment-plan.v1.schema.json",
+            "sha256": "dab612910978078287030fb8dcd7197fff55d2be11650069976c1550783274ae"
+          }
+        ],
+        "known_gaps": ["Only one approved local OpenQASM subset fixture and one simulator family are wired; no graphical studio, provider adapter, QPU, or external execution exists."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "learners, researchers, domain specialists, independent reproducers, and quantum tool builders",
+        "organizations evaluating quantum workflows without choosing one permanent vendor"
+      ],
+      "job_to_be_done": "Design, run, compare, teach, and reproduce bounded quantum experiments while retaining the problem, baseline, budget, evidence, and exit path.",
+      "does": "The bounded prototype validates and runs one approved local OpenQASM subset experiment and verifies its E0 receipt; the design specifies later simulator, representation, learning, and broker interfaces.",
+      "does_not": "It does not prove hardware execution, practical advantage, universal OpenQASM portability, provider neutrality by declaration, or authority to spend or publish.",
+      "workflow": [
+        "Select a real problem and preregister baseline, metric, stop rule, rights, data, budget, and claim ceiling.",
+        "Run locally through at least one bounded simulator and produce source- and schema-bound evidence.",
+        "Compare an independent implementation and record semantic disagreement or feature loss.",
+        "Teach and remix through Creator Forge without widening licence or permission.",
+        "Route to a broker or QPU only after consent, treasury, provider, cancellation, and release gates pass."
+      ],
+      "business_model": {
+        "description": "Free local studio and public synthetic curriculum; fixed hosted team workspaces and managed adapters, with transparent pass-through provider cost only after separate authorization.",
+        "revenue_events": ["free-open-core", "fixed-subscription", "transparent-pass-through"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "No quantum-inevitability marketing, qubit-count status, automatic retries, hidden provider sponsorship, leaderboard prestige, or checkout inside heightened narrative or ritual modes.",
+      "rights_counterweights": [
+        "local-first execution and credible provider exit",
+        "strong classical baseline and independent reproduction",
+        "data, cost, cancellation, credential, and claim gates",
+        "plain education route with no payment or identity requirement"
+      ],
+      "firewall_dependencies": ["CF-03", "CF-04", "CF-05", "CF-06", "CF-07", "CF-09", "CF-11", "CF-12"],
+      "module_dependencies": ["QK-CORE", "QK-CAPS", "QK-SIM", "QK-IR", "QK-ROUTER", "QK-EVIDENCE", "QK-CLAIM", "QK-GUILD"],
+      "power_dependencies": ["KPM-O02", "KPM-O04", "KPM-D01", "KPM-D05", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-PROOF-COMMONS", "KP-TREASURY-GATE", "KP-CREATOR-FORGE"],
+      "success_metrics": [
+        "reproduction, baseline quality, disagreement visibility, and claim conformance",
+        "local completion, provider portability, cost cancellation, and data minimization",
+        "learner comprehension, contribution credit, and accessibility"
+      ],
+      "forbidden_metrics": [
+        "qubits accessed",
+        "QPU spend or jobs submitted",
+        "positive or advantage claims generated"
+      ],
+      "mvp_boundary": "The present CLI validates and runs one approved E0 OpenQASM subset fixture locally and verifies its receipt. No graphical studio, second simulator, provider adapter, account, or QPU is wired.",
+      "release_gate": "Two independent simulator families must reproduce shared fixtures and disagreement reporting before any brokered hardware adapter is considered."
+    },
+    {
+      "id": "KQ-READINESS-SHIELD",
+      "name": "KINGDOM Quantum Readiness Shield",
+      "family": "quantum",
+      "design_stage": "concept",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No cryptographic census, dated algorithm policy, interoperability fixture, migration rehearsal, or production integration is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "KINGDOM system owners, identity and release teams, ledger stewards, and security engineers",
+        "organizations beginning post-quantum migration without moving key material into the lab"
+      ],
+      "job_to_be_done": "Inventory cryptographic dependence, prioritize long-lived risk, test migration and interoperability, and keep algorithm choice behind a maintainable policy boundary.",
+      "does": "Would provide a no-secret cryptographic census, dated standards policy, hybrid interoperability lab, long-lived proof transition, and ledger migration benchmarks.",
+      "does_not": "It does not invent cryptography, rotate production keys, claim an existing blockchain is quantum-safe, make QKD a substitute for PQC, or equate algorithm support with validated deployment.",
+      "workflow": [
+        "Inventory purpose, protocol, algorithm, provider, key-location reference, lifetime, dependency, owner, migration target, and evidence without collecting keys.",
+        "Pin current standards, errata, test vectors, implementation, policy, and review date.",
+        "Test controlled interoperability, downgrade behavior, performance, storage, recovery, and rollback in isolation.",
+        "Model identity, release, backup, wallet, validator, consensus, and legacy-state transition separately.",
+        "Promote only after system-owner authority, consent where needed, validated provider choice, operational rollback, and current evidence."
+      ],
+      "business_model": {
+        "description": "Fixed-scope inventory, migration planning, and interoperability support.",
+        "revenue_events": ["fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "No countdown to a speculative cryptographically relevant quantum computer, no blanket quantum-safe label, and no urgency-based key migration without system-specific evidence and rollback.",
+      "rights_counterweights": [
+        "no key material or unnecessary identity data in the census",
+        "current standards, errata, provider, policy, and expiry evidence",
+        "separate authorization for every production key or identity transition",
+        "legacy verification, recovery, rollback, and appeal preserved"
+      ],
+      "firewall_dependencies": ["CF-03", "CF-05", "CF-06", "CF-09", "CF-12"],
+      "module_dependencies": ["QS-01", "QS-02", "QS-03", "QS-04", "QS-05", "QK-EVIDENCE", "QK-CLAIM"],
+      "power_dependencies": ["KPM-O02", "KPM-D01", "KPM-D04", "KPM-D05", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-PROOF-COMMONS", "KP-TREASURY-GATE", "KQ-COMMONS-STUDIO"],
+      "success_metrics": [
+        "inventory coverage, evidence freshness, interoperability, and rollback readiness",
+        "legacy-state, recovery, storage, latency, and downgrade behavior",
+        "exceptions expired or repaired without secret exposure"
+      ],
+      "forbidden_metrics": [
+        "fear-driven migration conversion",
+        "algorithms enabled",
+        "systems labelled quantum-safe without deployment evidence"
+      ],
+      "mvp_boundary": "No-secret census and dated algorithm-policy schemas with synthetic interoperability fixtures; no production keys, trust roots, wallets, validators, or network mutation.",
+      "release_gate": "Expired source snapshots, unknown providers, missing rollback, secret-bearing records, or claims beyond tested deployment must fail closed."
+    },
+    {
+      "id": "KQ-MATERIALS-GARDEN",
+      "name": "KINGDOM Quantum Materials Garden",
+      "family": "quantum",
+      "design_stage": "concept",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No chemistry, materials, lattice, exact-classical-reference, resource-estimate, or independent-reproduction fixture is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "chemists, materials scientists, classical computational researchers, quantum algorithm teams, and independent reviewers",
+        "mission-aligned research partners with bounded data and IP terms"
+      ],
+      "job_to_be_done": "Turn scientifically meaningful chemistry and materials questions into portable, baseline-rich hybrid experiments and reusable evidence bundles.",
+      "does": "Would separate molecule or lattice specification, integrals or Hamiltonian, classical reference, ansatz or algorithm, compiler, backend, resource estimate, result, and claim.",
+      "does_not": "It does not promise commercial discovery, hide classical preprocessing, treat one benchmark as a market, or let a sponsor own negative results or reviewer selection.",
+      "workflow": [
+        "Select a small public problem with an exact or strong classical solution and explicit scientific value.",
+        "Preserve domain input separately from representation, circuit, compiler, simulator, and hardware choice.",
+        "Compare independent classical and quantum-capable stacks with total work, uncertainty, and feature loss.",
+        "Add fault-tolerant estimates with sensitivity to code, error budget, hardware assumptions, runtime, and physical qubits.",
+        "Publish or partner only under scoped data, IP, attribution, negative-result, reproduction, and correction terms."
+      ],
+      "business_model": {
+        "description": "Open benchmark commons plus fixed-cost sponsored pilots, reproducibility services, and partner research; milestone pay follows protocol completion.",
+        "revenue_events": ["free-open-core", "fixed-fee"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "No exclusivity over public fixtures, suppressed null results, sponsor-controlled baseline, speculative investment claims, or scientist compensation tied to a desired outcome.",
+      "rights_counterweights": [
+        "domain-owner, data, licence, IP, sponsor, and publication boundaries",
+        "independent classical baseline and reproduction review",
+        "negative results and corrections remain visible and compensated",
+        "provider, cost, energy, and total classical work are included"
+      ],
+      "firewall_dependencies": ["CF-05", "CF-06", "CF-07", "CF-08", "CF-09", "CF-11", "CF-12"],
+      "module_dependencies": ["QK-CORE", "QK-SIM", "QK-IR", "QK-EVIDENCE", "QK-CLAIM", "QK-CHEM", "QK-EST"],
+      "power_dependencies": ["KPM-O02", "KPM-O04", "KPM-O05", "KPM-D04", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-PROOF-COMMONS", "KP-TREASURY-GATE", "KP-CREATOR-FORGE", "KQ-COMMONS-STUDIO"],
+      "success_metrics": [
+        "scientific reuse, classical-baseline quality, independent reproduction, and negative findings",
+        "representation portability, feature-loss visibility, and resource-estimate sensitivity",
+        "sponsor concentration, data/IP compliance, and correction latency"
+      ],
+      "forbidden_metrics": [
+        "advantage claims per pilot",
+        "QPU usage as scientific value",
+        "valuation, investment, or publicity generated"
+      ],
+      "mvp_boundary": "One public small-molecule and one small lattice fixture with exact classical references and local simulations; no proprietary data, drug claim, material-discovery claim, or hardware spend.",
+      "release_gate": "The domain problem, classical reference, total cost, sponsor conflict, data/IP rights, and negative-result publication route must survive independent review before any external pilot."
+    },
+    {
+      "id": "KQ-FAIRQUEUE",
+      "name": "KINGDOM Quantum FairQueue",
+      "family": "quantum",
+      "design_stage": "concept",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No request schema, scheduler simulation, protected-quota policy, private accommodation route, fairness evaluation, or appeal fixture is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "learners, community labs, researchers, resource stewards, and compute providers",
+        "teams allocating simulator, accelerator, QPU, or future network capacity"
+      ],
+      "job_to_be_done": "Allocate scarce quantum-related capacity transparently without letting wealth, status, institutional prestige, or earlier wins silently become priority.",
+      "does": "Specifies how a future synthetic model would represent eligibility, task class, capability fit, estimate, budget, commons quota, queue policy, preemption, starvation, cost, expiry, cancellation, replay, and appeal.",
+      "does_not": "It does not control hardware, auction epistemic worth, promise service availability, auto-spend, let a scheduler rewrite priority policy, or treat a fast queue as better science.",
+      "workflow": [
+        "Publish resource capability, limits, availability, price, energy assumptions, provider, policy authority, protected quota, and review date.",
+        "Submit a minimized request covering public task class, required capability, deadline class, estimate, budget ceiling, data class, and cancellation rule; private accommodation data travels separately and the scheduler receives only the derived constraint it needs.",
+        "Dry-run FIFO, deadline, capability-fit, reserved-quota, and fairness-aware policies on synthetic demand before selecting a declared policy.",
+        "Emit an allocation receipt with task class, reason, authority, wait, preemption, starvation exposure, cost, resource use, failure, expiry, and replay route, excluding raw accommodation and private purpose data.",
+        "Route policy changes and appeals outside scheduler operations; require treasury and consent gates before any future paid or remote execution."
+      ],
+      "business_model": {
+        "description": "Open local policy simulator with fixed-price hosted evaluation and training; future provider cost may be transparent pass-through only after separate authorization.",
+        "revenue_events": ["free-open-core", "fixed-fee", "transparent-pass-through"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "Inability to pay cannot erase the protected learning and reproduction lane; urgency, loyalty, prestige, reputation, token holdings, or sponsor pressure cannot create undeclared priority.",
+      "rights_counterweights": [
+        "published allocation authority, policy, a 20 percent synthetic-MVP commons and independent-reproduction floor, caps, expiry, and cancellation",
+        "anti-starvation and aggregate wealth-skew metrics; the synthetic MVP allows no protected request to wait more than five eligible allocation rounds",
+        "scheduler, policy owner, treasury, evidence reviewer, and appeal role separation",
+        "private accommodation data is isolated from allocation receipts; the scheduler receives only a derived constraint, and no cross-domain person score is built"
+      ],
+      "firewall_dependencies": ["CF-04", "CF-07", "CF-08", "CF-09", "CF-10", "CF-12"],
+      "module_dependencies": ["QK-CAPS", "QK-SIM", "QK-ROUTER", "QK-EVIDENCE", "QK-CLAIM", "QK-EST"],
+      "power_dependencies": ["KPM-D01", "KPM-D05", "KPM-D06", "KPM-D08", "KPM-D09"],
+      "product_dependencies": ["KP-CONSENT-GATE", "KP-PROOF-COMMONS", "KP-STEWARD", "KP-TREASURY-GATE", "KP-COMMON-TABLE", "KQ-COMMONS-STUDIO"],
+      "success_metrics": [
+        "capability fit, cancellation, utilization, wait distribution, starvation, and recovery",
+        "commons-quota integrity, wealth and status skew, policy-change review, and appeal completion",
+        "cost-estimate accuracy and zero unauthorized or automatic spend"
+      ],
+      "forbidden_metrics": [
+        "provider revenue or paid queue share",
+        "maximum utilization or throughput alone",
+        "prestige-weighted access or jobs submitted as scientific value"
+      ],
+      "mvp_boundary": "Synthetic request and resource fixtures, a minimum 20 percent protected commons and independent-reproduction share, a maximum five eligible-round wait for protected requests, policy simulation, privacy-separated accommodations, aggregate fairness analysis, allocation receipts, and appeals; no provider account, credentials, QPU job, payment, production queue, or network control.",
+      "release_gate": "A rich sponsor requesting all capacity must be unable to consume the 20 percent synthetic-MVP protected share, starve a protected request beyond five eligible rounds, expose accommodation data, change its own priority policy, authorize spend, or block an independent appeal."
+    },
+    {
+      "id": "KQ-NETWORK-SANDBOX",
+      "name": "KINGDOM Quantum Network Fairness Sandbox",
+      "family": "quantum",
+      "design_stage": "research-only",
+      "implementation": {
+        "state": "declared-only",
+        "evidence_refs": [],
+        "known_gaps": ["No network simulator, topology fixture, allocation receipt, cross-simulator comparison, or fairness experiment is implemented."],
+        "live_effects": false
+      },
+      "primary_users": [
+        "quantum-network researchers, scheduler designers, protocol students, governance researchers, and infrastructure stewards",
+        "communities studying scarce-resource allocation without production secrets"
+      ],
+      "job_to_be_done": "Model entanglement distribution and scarce quantum-resource scheduling as both a technical and governance problem.",
+      "does": "Would compare topology, device assumptions, noise, entanglement rate and fidelity, latency, memory expiry, allocation, preemption, starvation, denial of service, and appeal semantics.",
+      "does_not": "It does not operate a quantum network, protect production traffic, make QKD a general security product, depend on closed patented stacks, or let prestige silently set priority.",
+      "workflow": [
+        "Declare simulator, topology, hardware assumptions, noise, seed, application request, fidelity, deadline, and classical control.",
+        "Run FIFO, deadline, fidelity, throughput, and fairness-aware allocation policies on synthetic scenarios.",
+        "Emit synthetic allocation receipts with public task class, priority authority, wait, preemption, failure, resource use, and replay or appeal route, excluding private purpose or accommodation data.",
+        "Compare throughput with fairness, starvation, synthetic or aggregate wealth and status skew, denial of service, and recovery.",
+        "Cross-check important scenarios in an independent simulator before publishing a research claim."
+      ],
+      "business_model": {
+        "description": "Open research fixtures and curriculum with fixed hosted simulation or training support.",
+        "revenue_events": ["free-open-core", "fixed-fee", "fixed-subscription"],
+        "per_conversion_revenue": false,
+        "per_consent_revenue": false,
+        "per_sanction_revenue": false,
+        "claim_outcome_revenue": false,
+        "governance_or_reputation_sale": false,
+        "personal_data_sale": false,
+        "resource_volume_markup": false,
+        "token_appreciation_revenue": false
+      },
+      "pressure_boundary": "Money, status, institutional prestige, token holdings, or prior wins cannot silently increase simulated or future allocation priority; every priority rule is declared and appealable.",
+      "rights_counterweights": [
+        "synthetic data and no production secrets",
+        "allocation authority, fairness, starvation, preemption, and appeal receipts",
+        "independent simulator cross-check and explicit idealization",
+        "research-only labelling and no security substitution claim"
+      ],
+      "firewall_dependencies": ["CF-05", "CF-09", "CF-10", "CF-12"],
+      "module_dependencies": ["QK-CORE", "QK-SIM", "QK-EVIDENCE", "QK-CLAIM", "QN-01", "QN-02"],
+      "power_dependencies": ["KPM-O02", "KPM-O04", "KPM-D01", "KPM-D06", "KPM-D08"],
+      "product_dependencies": ["KP-PROOF-COMMONS", "KP-STEWARD", "KQ-COMMONS-STUDIO", "KQ-FAIRQUEUE"],
+      "success_metrics": [
+        "reproducibility, assumption visibility, fairness, starvation, and denial-of-service resilience",
+        "allocation reason, authority, expiry, replay, and appeal coverage",
+        "cross-simulator disagreement and recovery visibility"
+      ],
+      "forbidden_metrics": [
+        "maximum Bell-pair rate alone",
+        "wealth-weighted priority revenue",
+        "production security or quantum-Internet readiness claims"
+      ],
+      "mvp_boundary": "Synthetic discrete-event scenarios and allocation-policy receipts in an open simulator; no QKD purchase, closed runtime dependency, quantum link, production traffic, or real priority decision.",
+      "release_gate": "A policy that maximizes throughput while starving low-status or low-budget requests must be visible as a governance failure rather than declared optimal."
+    }
+  ]
+}
